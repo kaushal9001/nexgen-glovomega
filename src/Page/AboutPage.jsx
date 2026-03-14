@@ -133,12 +133,19 @@ const AboutPage = () => {
           {/* Left Content */}
           <div className="bg-white/50 rounded-2xl p-8  shadow-sm">
             <h2 className="text-3xl font-semibold text-[#0F2A44] mb-4">
+              Empowering Businesses with Smart Compliance
+            </h2>
+            <p className="text-green-600 font-medium mb-3">
+              Making business compliance simple and affordable.
+            </p>
+
+            <p className="text-gray-600 text-xl leading-relaxed">
+              {" "}
               We offer a carefully curated range of high-quality services at
               affordable prices. Our mission is to make it easy for
               entrepreneurs to start, manage, and grow their businesses.
-            </h2>
-
-            <p className="text-gray-600 text-xl leading-relaxed">
+              <br />
+              <br />
               Over the years, Nexgentaxsolution has supported thousands of
               businesses with company registration, regulatory compliance, GST
               and tax filing, and other essential financial services—helping

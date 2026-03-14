@@ -196,12 +196,12 @@ const HomePage = () => {
             <div className="border-l-4 pl-5  border-green-600 ">
               <div className="border-green-600">
                 <h2 className="text-4xl font-semibold text-[#0F2A44]">
-                  Professional Guidance for Business, GST & Tax Filings
+                  Expert Business & Tax Support
                 </h2>
 
-                {/* <h3 className="text-4xl text-green-600 mt-2">
+                <h3 className="text-4xl text-green-600 mt-2">
                   Professional Guidance for Business, GST & Tax Filings
-                </h3> */}
+                </h3>
               </div>
               <p className="text-xl text-gray-600 mt-6 leading-relaxed">
                 Handle your business requirements more efficiently with expert
