@@ -4,9 +4,10 @@ import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { MdOutlineReceiptLong } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
-import secimgF from "../assets/photos/sectionF-image.png";
-import secimgS from "../assets/photos/section-2-image.png";
-import secimgFh from "../assets/photos/section-4-image.png";
+import secimgF from "../assets/photos/imge-a.webp";
+import secimgth from "../assets/photos/image-c.webp";
+import secimgS from "../assets/photos/image-b.webp";
+import secimgFh from "../assets/photos/image-d.webp";
 import secvideoth from "../assets/photos/IndiaFilings-The-Journey!.mp4";
 import secvideof from "../assets/photos/june-ai.mp4";
 import client1 from "../assets/photos/flipkartimg.avif";
@@ -221,14 +222,7 @@ const HomePage = () => {
 
             {/* Right Image */}
             <div className="bg-gray-100  border border-gray-200 shadow-gray-300  rounded-2xl shadow-md">
-              <video
-                src={secvideof}
-                autoPlay
-                muted
-                loop
-                controls
-                className="rounded-xl  w-full "
-              ></video>
+              <img src={secimgF} alt="img" className="rounded-xl  w-full " />
             </div>
           </div>
         </div>
@@ -336,14 +330,7 @@ const HomePage = () => {
 
             {/* Right Image */}
             <div className="bg-gray-100  rounded-2xl shadow-md">
-              <video
-                src={secvideoth}
-                autoPlay
-                muted
-                loop
-                controls
-                className="rounded-xl w-full "
-              ></video>
+              <img src={secimgth} alt="img" className="rounded-xl w-full " />
             </div>
           </div>
         </div>

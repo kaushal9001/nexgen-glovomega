@@ -1,5 +1,7 @@
 import React from "react";
-import secvideof from "../assets/photos/june-ai.mp4";
+import secimgf from "../assets/photos/image-e.webp";
+import secimgS from "../assets/photos/image-f.webp";
+import secimgT from "../assets/photos/founder.png";
 import { FaCheckCircle, FaHeart, FaShieldAlt } from "react-icons/fa";
 import { MdOutlinePriceCheck } from "react-icons/md";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
@@ -93,14 +95,7 @@ const AboutPage = () => {
         <div className=" px-5 md:px-10 grid md:grid-cols-2 gap-10 items-center">
           {/* Left Image */}
           <div className="rounded-2xl overflow-hidden shadow-lg p-3  bg-white">
-            <video
-              src={secvideof}
-              autoPlay
-              muted
-              loop
-              controls
-              className="rounded-xl  md:w-full "
-            ></video>
+            <img src={secimgf} alt="img" className="rounded-xl  md:w-full " />
           </div>
 
           {/* Right Content */}
@@ -214,7 +209,7 @@ const AboutPage = () => {
 
           {/* Right Image */}
           <div className="  ">
-            <img src={secimgFh} alt="AI Compliance" className=" " />
+            <img src={secimgS} alt="AI Compliance" className=" " />
           </div>
         </div>
       </section>
@@ -311,9 +306,9 @@ const AboutPage = () => {
           {/* Right Image */}
           <div className="lg:w-[30%]">
             <img
-              src="/images/technology.jpg"
+              src={secimgT}
               alt="technology"
-              className="w-full h-[220px] object-cover rounded-2xl shadow-md"
+              className="w-full h-[220px] object-cover object-top rounded-2xl shadow-md"
             />
           </div>
         </div>

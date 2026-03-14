@@ -1,13 +1,13 @@
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
-import logo from "../assets/photos/logo.jpg";
+import logo from "../assets/photos/logoo.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const footerLinks = [
     {
-      title: "IndiaFilings",
+      title: "Nexgentaxsolution",
       links: [
-        { name: "About IndiaFilings", path: "/about-us" },
+        { name: "About Nexgentaxsolution", path: "/about-us" },
         { name: "Services", path: "/services" },
         { name: "Contact Us", path: "contact-us" },
       ],
@@ -34,7 +34,7 @@ const Footer = () => {
       links: [
         { name: "Confidentiality Policy", path: "/confidentiality" },
         { name: "Disclaimer Policy", path: "/disclaimer" },
-        { name: "IndiaFilings Review", path: "/review" },
+        { name: "Nexgentaxsolution Review", path: "/review" },
       ],
     },
   ];
@@ -44,7 +44,7 @@ const Footer = () => {
       <div className="grid md:grid-cols-5 gap-10 px-10 ">
         {/* Logo + Text */}
         <div>
-          <Link to={"/"} className="text-xl font-bold bg-green-600">
+          <Link to={"/"} className="text-xl font-bold ">
             <img src={logo} alt="logo" className="h-15 w-35 cursor-pointer" />
           </Link>
 
@@ -83,7 +83,7 @@ const Footer = () => {
       {/* Bottom */}
       <div className=" mt-12 border-t border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-gray-400 px-10 ">
-          © 2026 IndiaFilings. All rights reserved.
+          © 2026 Nexgentaxsolution. All rights reserved.
         </p>
 
         <div className="flex gap-4 px-10 ">

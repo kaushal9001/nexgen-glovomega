@@ -2,7 +2,7 @@ import { FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaBars, FaClosedCaptioning, FaCut } from "react-icons/fa";
-import logo from "../assets/photos/logo.jpg";
+import logo from "../assets/photos/logoo.png";
 import { HiOutlineX } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
 
@@ -30,7 +30,7 @@ const Navbar = () => {
     >
       <div className="md:px-10 px-5  py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link to={"/"} className="text-xl font-bold bg-green-600">
+        <Link to={"/"} className="text-xl font-bold ">
           <img src={logo} alt="logo" className="h-15 w-35 cursor-pointer" />
         </Link>
 
@@ -94,13 +94,13 @@ const Navbar = () => {
             </ul>
 
             {/* Login Button */}
-            <button className="cursor-pointer relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group w-full">
+            {/* <button className="cursor-pointer relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group w-full">
               <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
               <span className="relative z-10 group-hover:text-white transition">
                 Login
               </span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
