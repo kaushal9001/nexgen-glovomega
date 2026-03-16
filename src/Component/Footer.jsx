@@ -7,7 +7,7 @@ const Footer = () => {
     {
       title: "Nexgentaxsolution",
       links: [
-        { name: "About Nexgentaxsolution", path: "/about-us" },
+        { name: "About Us", path: "/about-us" },
         { name: "Services", path: "/services" },
         { name: "Contact Us", path: "contact-us" },
       ],
@@ -34,7 +34,7 @@ const Footer = () => {
       links: [
         { name: "Confidentiality Policy", path: "/confidentiality" },
         { name: "Disclaimer Policy", path: "/disclaimer" },
-        { name: "Nexgentaxsolution Review", path: "/review" },
+        { name: "Review", path: "/review" },
       ],
     },
   ];
