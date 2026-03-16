@@ -79,42 +79,47 @@ const ContactusPage = () => {
         </div>
 
         {/* Right Side Form */}
-        <div className="border border-gray-200 rounded-2xl p-8 shadow-sm">
+        <div className="border border-gray-200 rounded-2xl p-8 shadow-sm relative">
           <h2 className="text-2xl font-semibold text-[#0F2A44] mb-6">
-            Enter Your Details
+            Enquire Now
           </h2>
 
           <form className="space-y-5">
             <input
               type="text"
-              placeholder="Your Name"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
-            />
-
-            <input
-              type="tel"
-              placeholder="Phone Number"
+              placeholder="Enter Name"
               className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
             />
 
             <input
               type="email"
-              placeholder="Email Address"
+              placeholder="Enter Email address"
               className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
             />
 
-            <textarea
-              rows="4"
-              placeholder="Your Message"
+            <input
+              type="tel"
+              placeholder="Enter Mobile Number"
               className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
-            ></textarea>
+            />
 
-            {/* Button (same effect you fixed) */}
+            <input
+              type="text"
+              placeholder="Select interested Location"
+              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
+            />
+            <input
+              type="text"
+              placeholder="Select interest type"
+              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
+            />
+
+            {/* Submit Button */}
             <button className="relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group">
               <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
               <span className="relative z-10 group-hover:text-white transition">
-                Send Message
+                Submit
               </span>
             </button>
           </form>
