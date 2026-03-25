@@ -147,7 +147,7 @@ const HomePage = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`flex w-full justify-start  lg:w-80  ${service.border} px-5 py-2 md:px-10 px-2 border-gray-300 justify-center items-center gap-2 text-sm group cursor-pointer`}
+                className={`flex w-full justify-start  lg:w-75  ${service.border} px-5 py-2 md:px-10 px-2 border-gray-300 justify-center items-center gap-2 text-sm group cursor-pointer`}
               >
                 <span
                   className={`text-3xl ${service.color} group-hover:scale-110 transition`}
@@ -303,7 +303,7 @@ const HomePage = () => {
                 </h2>
 
                 <h3 className="text-4xl text-green-600 mt-2">
-                  The Journey of Nexgentaxsolution
+                  The Journey of Nexgentax - solution
                 </h3>
               </div>
               <p className="text-xl text-gray-600 mt-6 leading-relaxed">
