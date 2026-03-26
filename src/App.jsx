@@ -13,6 +13,7 @@ import ContactusPage from "./Page/ContectusPage";
 import ScrollToTop from "./Component/ScrollToTop";
 import AboutPage from "./Page/AboutPage";
 import NotFound from "./Page/NotFound";
+import ServicePage from "./Page/ServicePage";
 
 const App = () => {
   const lenis = useLenis((lenis) => {
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/blogs" element={<BlogPage />} />
             <Route path="/contact-us" element={<ContactusPage />} />
             <Route path="/about-us" element={<AboutPage />} />
+            <Route path="/service/:title" element={<ServicePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

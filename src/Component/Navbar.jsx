@@ -12,7 +12,7 @@ const Navbar = () => {
   const [mobileNested, setMobileNested] = useState(null);
   const [mobileSub, setMobileSub] = useState(null);
   const [open, setOpen] = useState(false);
-  const [openSub, setOpenSub] = useState(null);
+  const [openArrow, setOpenArrow] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [activeCategory, setActiveCategory] = useState(
     "Income Tax Return Filling",
@@ -105,12 +105,18 @@ const Navbar = () => {
               onMouseLeave={() => setActiveMenu(null)}
               className="relative hover:text-green-600 cursor-pointer transition"
             >
-              {item}
+              {item !== "Vistior Count" && (
+                <p className=" flex items-center gap-2">
+                  {item}
+                  <IoIosArrowForward className="" />
+                </p>
+              )}
+              {item !== "Vistior Count" || <p>{item}</p>}
 
               {/* 🔥 Dropdown */}
               {(item === "Services" || dropdownData[item]) && (
                 <div
-                  className={`absolute top-6 left-0  bg-white shadow-2xl rounded-xl p-6 z-50 transition-all duration-300 ${
+                  className={`absolute top-4  left-0  rounded-xl py-4 z-50 transition-all duration-300 ${
                     activeMenu === item
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-5 pointer-events-none"
@@ -118,9 +124,9 @@ const Navbar = () => {
                 >
                   {/* 🟢 SERVICES MEGA MENU */}
                   {item === "Services" ? (
-                    <div className="flex gap-6 ">
+                    <div className="flex shadow-xl bg-white rounded-xl">
                       {/* Left */}
-                      <div className="w-[250px] space-y-3 border-r pr-4">
+                      {/* <div className="w-[250px] space-y-3 border-r pr-4">
                         {Object.keys(submenuItems).map((cat, i) => (
                           <p
                             key={i}
@@ -140,14 +146,65 @@ const Navbar = () => {
                             )}
                           </p>
                         ))}
-                      </div>
+                      </div> */}
+                      <div className="flex  bg-white rounded-l-xl shadow-xl overflow-hidden">
+                        {/* 🔥 LEFT SIDE */}
 
-                      {/* Right */}
+                        <div className="w-[250px] bg-gray-100 min-h-[400px] ">
+                          {Object.keys(submenuItems).map((cat, i) => (
+                            <p
+                              key={i}
+                              onMouseEnter={() => setActiveCategory(cat)}
+                              className={`px-4 py-3 cursor-pointer text-sm  flex items-center justify-start ${
+                                activeCategory === cat
+                                  ? "bg-green-600 text-white font-semibold"
+                                  : "text-gray-700 hover:bg-gray-200"
+                              }`}
+                            >
+                              <Link
+                                onClick={() => setActiveMenu(null)}
+                                to={`/service/${cat}`}
+                              >
+                                {submenuItems[cat]?.length > 0 || cat}
+                              </Link>
+
+                              {submenuItems[cat]?.length > 0 && cat}
+
+                              {submenuItems[cat]?.length > 0 && (
+                                <span className=" absolute left-55">
+                                  <IoIosArrowForward />
+                                </span>
+                              )}
+                            </p>
+                          ))}
+                        </div>
+
+                        {/* 🔥 RIGHT SIDE */}
+                      </div>
+                      {submenuItems[activeCategory]?.length > 0 && (
+                        <div className="w-[400px] p-5 space-y-3 border-l">
+                          <h3 className="text-green-600 font-semibold border-b pb-2">
+                            {activeCategory}
+                          </h3>
+
+                          {submenuItems[activeCategory].map((item, i) => (
+                            <Link
+                              onClick={() => setActiveMenu(null)}
+                              to={`/service/${item.title}`}
+                              key={i}
+                              className="text-gray-700 flex text-sm hover:text-green-500 cursor-pointer"
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                      {/* Right
                       {submenuItems[activeCategory]?.length > 0 && (
                         <div className="w-[400px] grid grid-cols-2  gap-4">
                           {submenuItems[activeCategory].map((item, i) => (
                             <div key={i}>
-                              {/* Main Card */}
+                              Main Card
                               <div
                                 onClick={() =>
                                   item.subItems
@@ -159,16 +216,7 @@ const Navbar = () => {
                                 <p className="font-semibold flex justify-between">
                                   {item.title}
 
-                                  {/* Arrow only if subItems */}
-                                  {item.subItems && (
-                                    <span>
-                                      <IoIosArrowForward />
-                                    </span>
-                                  )}
-                                </p>
-                              </div>
-
-                              {/* 🔥 Sub Items */}
+                                  Arrow only if subItems
                               {item.subItems && openSub === i && (
                                 <div className="pl-4 mt-2 space-y-1 border-t rounded-md p-1 shadow">
                                   {item.subItems.map((sub, idx) => (
@@ -184,19 +232,22 @@ const Navbar = () => {
                             </div>
                           ))}
                         </div>
-                      )}
+                      )} */}
                     </div>
                   ) : (
                     /* 🟢 SIMPLE DROPDOWN */
-                    <div className="w-[220px] space-y-2 border-l-2 pl-2">
-                      {dropdownData[item].map((sub, i) => (
-                        <p
-                          key={i}
-                          className="text-gray-700 text-sm hover:text-green-600 cursor-pointer"
-                        >
-                          {sub.title}
-                        </p>
-                      ))}
+                    <div className=" p-3 rounded-xl shadow-md bg-white">
+                      <div className="w-[220px] space-y-2 border-l-2 pl-2  ">
+                        {dropdownData[item].map((sub, i) => (
+                          <Link
+                            to={`/service/${sub.title}`}
+                            key={i}
+                            className="text-gray-700 flex text-sm hover:text-green-600 cursor-pointer"
+                          >
+                            {sub.title}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -265,34 +316,57 @@ const Navbar = () => {
                     <div className="pl-4 mt-2 space-y-2">
                       {Object.keys(submenuItems).map((cat, i) => (
                         <div key={i}>
-                          <p
-                            onClick={() =>
-                              setMobileSub(mobileSub === cat ? null : cat)
-                            }
-                            className="flex justify-between cursor-pointer text-sm text-gray-600"
-                          >
-                            {cat}
-                            {submenuItems[cat]?.length > 0 && (
-                              <span>
-                                {" "}
-                                <IoIosArrowForward />
-                              </span>
-                            )}
-                          </p>
-
+                          {submenuItems[cat]?.length > 0 && (
+                            <p
+                              // to={`/service/${cat}`}
+                              onClick={() => {
+                                setMobileSub(mobileSub === cat ? null : cat);
+                                // setOpen(false)
+                              }}
+                              className="flex justify-between cursor-pointer text-sm text-gray-600"
+                            >
+                              {cat}
+                              {submenuItems[cat]?.length > 0 && (
+                                <span>
+                                  {" "}
+                                  <IoIosArrowForward />
+                                </span>
+                              )}
+                            </p>
+                          )}
+                          {submenuItems[cat]?.length > 0 || (
+                            <Link
+                              to={`/service/${cat}`}
+                              onClick={() => {
+                                setMobileSub(mobileSub === cat ? null : cat);
+                                setOpen(false);
+                              }}
+                              className="flex justify-between cursor-pointer text-sm text-gray-600"
+                            >
+                              {cat}
+                              {submenuItems[cat]?.length > 0 && (
+                                <span>
+                                  {" "}
+                                  <IoIosArrowForward />
+                                </span>
+                              )}
+                            </Link>
+                          )}
                           {/* Sub items */}
                           {mobileSub === cat &&
                             submenuItems[cat]?.map((sub, j) => (
                               <div key={j}>
                                 {/* Main Item */}
-                                <p
-                                  onClick={() =>
-                                    sub.subItems
+                                <Link
+                                  to={`/service/${sub.title}`}
+                                  onClick={() => {
+                                    (sub.subItems
                                       ? setMobileNested(
                                           mobileNested === j ? null : j,
                                         )
-                                      : null
-                                  }
+                                      : null,
+                                      setOpen(false));
+                                  }}
                                   className="pl-4  text-sm text-gray-500 py-1 flex justify-between cursor-pointer"
                                 >
                                   • {sub.title}
@@ -301,10 +375,10 @@ const Navbar = () => {
                                       <IoIosArrowForward />
                                     </span>
                                   )}
-                                </p>
+                                </Link>
 
                                 {/* 🔥 Nested Sub Items (Class -3 ke andar) */}
-                                {sub.subItems && mobileNested === j && (
+                                {/* {sub.subItems && mobileNested === j && (
                                   <div className="pl-6 space-y-1 ">
                                     {sub.subItems.map((inner, k) => (
                                       <p
@@ -315,7 +389,7 @@ const Navbar = () => {
                                       </p>
                                     ))}
                                   </div>
-                                )}
+                                )} */}
                               </div>
                             ))}
                         </div>
