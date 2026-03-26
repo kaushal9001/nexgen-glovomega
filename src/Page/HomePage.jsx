@@ -10,10 +10,11 @@ import secimgS from "../assets/photos/image-b.webp";
 import secimgFh from "../assets/photos/image-d.webp";
 import secvideoth from "../assets/photos/IndiaFilings-The-Journey!.mp4";
 import secvideof from "../assets/photos/june-ai.mp4";
-import client1 from "../assets/photos/flipkartimg.avif";
-import client2 from "../assets/photos/icici-img.avif";
-import client3 from "../assets/photos/yes-bank-img.avif";
-import client4 from "../assets/photos/easemytrip-img.avif";
+import client1 from "../assets/photos/clint1.svg";
+import client2 from "../assets/photos/clint-2.png";
+import client3 from "../assets/photos/clint-3.svg";
+import client4 from "../assets/photos/clint-4.png";
+import client5 from "../assets/photos/clint-5.avif";
 
 import {
   FaCalendarAlt,
@@ -41,7 +42,7 @@ const HomePage = () => {
       icon: <HiOutlineOfficeBuilding />,
       title: "MCA Compliance",
       color: "text-orange-500",
-      border: "lg:border-e lg:border-b-0 border-b",
+      border: "lg:border-e lg:border-b-0 border-b ",
     },
     {
       icon: <MdOutlineReceiptLong />,
@@ -50,7 +51,7 @@ const HomePage = () => {
     },
   ];
   // -------------------
-  const clientsImg = [client1, client2, client3, client4];
+  const clientsImg = [client1, client2, client3, client4, client5];
   //   -----------------------------
 
   const points = [

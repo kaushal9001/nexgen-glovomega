@@ -105,14 +105,16 @@ const Navbar = () => {
               onMouseLeave={() => setActiveMenu(null)}
               className="relative hover:text-green-600 cursor-pointer transition"
             >
-              {item !== "Vistior Count" && (
-                <p className=" flex items-center gap-2">
+              {item !== "Vistior Count" ? (
+                <p className="flex items-center gap-2">
                   {item}
-                  <IoIosArrowForward className="" />
+                  <IoIosArrowForward
+                    className={` duration-400 ${activeMenu === item ? "rotate-0" : "rotate-90"}`}
+                  />
                 </p>
+              ) : (
+                <p>{item}</p>
               )}
-              {item !== "Vistior Count" || <p>{item}</p>}
-
               {/* 🔥 Dropdown */}
               {(item === "Services" || dropdownData[item]) && (
                 <div
