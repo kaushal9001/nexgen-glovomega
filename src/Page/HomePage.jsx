@@ -15,6 +15,7 @@ import client2 from "../assets/photos/clint-2.png";
 import client3 from "../assets/photos/clint-3.svg";
 import client4 from "../assets/photos/clint-4.png";
 import client5 from "../assets/photos/clint-5.avif";
+import { FaWhatsapp } from "react-icons/fa";
 
 import {
   FaCalendarAlt,
@@ -266,37 +267,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className="mt-20">
-        {/* Heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-[#0F2A44]">Our Partners</h2>
 
-          <div className="w-20 h-[3px]  bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7] mx-auto mt-3 rounded"></div>
-
-          <p className="text-gray-600 text-xl mt-4">
-            Trusted by leading institutions supporting entrepreneurship,
-            finance, and growth across India.
-          </p>
-        </div>
-
-        {/* Slider */}
-        <div className="overflow-hidden relative">
-          <div className="flex w-max  animate-scroll cursor-pointer hover:animate-none gap-8">
-            {[...clientsImg, ...clientsImg].map((logo, index) => (
-              <div
-                key={index}
-                className="flex items-center  bg-white justify-center  rounded-xl px-2 py-3 mb-5 min-w-[160px]  shadow-md shadow-green-900/50  "
-              >
-                <img
-                  src={logo}
-                  alt="client"
-                  className="h-12 w-50 object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
       <section className="mt-20 rounded-4xl mx-5 md:mx-10  py-10  bg-gray-400/10  bg-clip-padding backdrop-filter backdrop-blur-sm  border-gray-100">
         <div className="px-5 md:px-10">
           <div className="grid  lg:grid-cols-2 gap-12 items-center">
@@ -459,13 +430,24 @@ const HomePage = () => {
               </p>
             </div>
 
-            {/* Button */}
-            <button className="cursor-pointer relative overflow-hidden border border-green-600 text-green-600 w-40 px-6 py-3 rounded-2xl text-sm font-medium group">
+            <button
+              onClick={() => {
+                const phone = "7021182227"; // 🔥 number (country code ke sath)
+                const message = encodeURIComponent(
+                  "Hello, I want to enquire about your services.",
+                );
+
+                window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+              }}
+              className="relative overflow-hidden border  border-green-600 text-green-600 px-8 py-3 rounded-2xl text-sm font-medium group "
+            >
+              <span className="w-5 h-5 absolute left-[37px] top-[14px] bg-green-600 rounded-full animate-ping"></span>
+
               <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
-              <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition">
-                Start in India
-                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+              <span className="relative z-10 w-30 flex items-center gap-2 justify-center group-hover:text-white transition">
+                <FaWhatsapp className="text-2xl" />
+                Enquire Now
               </span>
             </button>
           </div>

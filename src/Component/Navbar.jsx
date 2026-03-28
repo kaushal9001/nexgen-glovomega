@@ -25,7 +25,6 @@ const Navbar = () => {
     "Investment",
     "UAE Services",
     "ERP Implementation & Customization",
-    "Vistior Count",
   ];
 
   // 🔥 Services Data (Mega Menu)
@@ -280,7 +279,7 @@ const Navbar = () => {
             <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
             <span className="relative z-10 flex gap-2 items-center group-hover:text-white transition">
               <FaWhatsapp className="text-lg" />
-              Enquire
+              Enquire Now
             </span>
           </button>
 
@@ -449,7 +448,7 @@ const Navbar = () => {
 
                 <span className="relative z-10 flex items-center gap-2 justify-center group-hover:text-white transition">
                   <FaWhatsapp className="text-lg" />
-                  Enquire
+                  Enquire Now
                 </span>
               </button>
             </ul>
