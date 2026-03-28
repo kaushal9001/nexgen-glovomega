@@ -178,12 +178,12 @@ const HomePage = () => {
             {[...clientsImg, ...clientsImg].map((logo, index) => (
               <div
                 key={index}
-                className="flex items-center  justify-center  rounded-xl px-8 py-3 mb-5 min-w-[160px]  shadow-md shadow-green-900/50  "
+                className="flex items-center  justify-center  bg-white rounded-xl px-2 py-3 mb-5 min-w-[160px]  shadow-md shadow-green-900/50  "
               >
                 <img
                   src={logo}
                   alt="client"
-                  className="h-8 w-30 object-contain"
+                  className="h-12 w-50 object-contain"
                 />
               </div>
             ))}
@@ -285,9 +285,13 @@ const HomePage = () => {
             {[...clientsImg, ...clientsImg].map((logo, index) => (
               <div
                 key={index}
-                className="flex items-center  justify-center  rounded-xl px-8 py-3 mb-5 min-w-[160px]  shadow-md shadow-green-900/50  "
+                className="flex items-center  bg-white justify-center  rounded-xl px-2 py-3 mb-5 min-w-[160px]  shadow-md shadow-green-900/50  "
               >
-                <img src={logo} alt="client" className="h-8 object-contain" />
+                <img
+                  src={logo}
+                  alt="client"
+                  className="h-12 w-50 object-contain"
+                />
               </div>
             ))}
           </div>

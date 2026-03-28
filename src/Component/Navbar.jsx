@@ -4,6 +4,7 @@ import { FaBars } from "react-icons/fa";
 import { HiOutlineX } from "react-icons/hi";
 import { IoIosArrowForward } from "react-icons/io";
 import logo from "../assets/photos/logoo.png";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {
   const location = useLocation();
@@ -56,7 +57,7 @@ const Navbar = () => {
       { title: "Stock Audit" },
       { title: "GST Audit" },
     ],
-    "15 CA/CB Services": null,
+    "15 CA-CB Services": null,
     "Consulting Services": [{ title: "Business Setup" }],
     "Licensesing Services": [
       { title: "Gumasta" },
@@ -192,7 +193,11 @@ const Navbar = () => {
                           {submenuItems[activeCategory].map((item, i) => (
                             <Link
                               onClick={() => setActiveMenu(null)}
-                              to={`/service/${item.title}`}
+                              to={
+                                item.title === "Class -3"
+                                  ? "/serviceDSC"
+                                  : `/service/${item.title}`
+                              }
                               key={i}
                               className="text-gray-700 flex text-sm hover:text-green-500 cursor-pointer"
                             >
@@ -260,10 +265,22 @@ const Navbar = () => {
 
         {/* Right Side */}
         <div className="flex items-center gap-5">
-          <button className="hidden lg:flex relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group">
+          <button
+            onClick={() => {
+              const phone = "919220138201"; // 🔥 number (country code ke sath)
+              const message = encodeURIComponent(
+                "Hello, I want to enquire about your services.",
+              );
+
+              window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+            }}
+            className="hidden lg:flex items-center relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group"
+          >
+            <span className="w-4 h-4 absolute left-[25.5px] bg-green-600 rounded-full animate-ping"></span>
             <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
-            <span className="relative z-10 group-hover:text-white transition">
-              Login
+            <span className="relative z-10 flex gap-2 items-center group-hover:text-white transition">
+              <FaWhatsapp className="text-lg" />
+              Enquire
             </span>
           </button>
 
@@ -389,7 +406,7 @@ const Navbar = () => {
                                       >
                                         - {inner}
                                       </p>
-                                    ))}
+                                      ))}
                                   </div>
                                 )} */}
                               </div>
@@ -411,6 +428,30 @@ const Navbar = () => {
                   )}
                 </li>
               ))}
+
+              <button
+                onClick={() => {
+                  const phone = "7021182227"; // 🔥 number (country code ke sath)
+                  const message = encodeURIComponent(
+                    "Hello, I want to enquire about your services.",
+                  );
+
+                  window.open(
+                    `https://wa.me/${phone}?text=${message}`,
+                    "_blank",
+                  );
+                }}
+                className="relative overflow-hidden border  border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group "
+              >
+                <span className="w-4 h-4 absolute left-[99px] top-[10px] bg-green-600 rounded-full animate-ping"></span>
+
+                <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
+
+                <span className="relative z-10 flex items-center gap-2 justify-center group-hover:text-white transition">
+                  <FaWhatsapp className="text-lg" />
+                  Enquire
+                </span>
+              </button>
             </ul>
           </div>
         </div>
