@@ -17,11 +17,13 @@ import {
 } from "react-icons/fa";
 
 const ServicePageDSC = () => {
+  const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   const [errorsF, setErrorsF] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [type, setType] = useState("Indian");
   const [userType, setUserType] = useState("Individual");
+  const [showPopup, setShowPopup] = useState(false);
 
   const validateField = (field, value) => {
     let message = "";
@@ -109,9 +111,16 @@ const ServicePageDSC = () => {
 
   // 🔥 Checkbox Handle
   const handleCheckbox = (item) => {
+    const isAlreadySelected = formData.extras.includes(item);
+
+    // 🔥 popup sirf tab jab SELECT kar rahe ho
+    if (item === "Token" && !isAlreadySelected) {
+      setShowPopup(true);
+    }
+
     let updatedExtras;
 
-    if (formData.extras.includes(item)) {
+    if (isAlreadySelected) {
       if (formData.extras.length === 1) {
         setError("At least one option required");
         return;
@@ -196,23 +205,29 @@ const ServicePageDSC = () => {
 🕒 Time: ${new Date().toLocaleString()}
     `,
     };
+    setSuccess(true);
 
-    emailjs
-      .send(
-        "service_9cue9ol",
-        "template_98dridl",
-        emailData,
-        "GdYRv0Mahzo815au3",
-      )
-      .then(() => {
-        alert("✅ Form Submitted Successfully!");
+    // emailjs
+    //   .send(
+    //     "service_9cue9ol",
+    //     "template_98dridl",
+    //     emailData,
+    //     "GdYRv0Mahzo815au3",
+    //   )
+    //   .then(() => {
+    //     // alert("✅ Form Submitted Successfully!");
+    //     setSuccess(true);
+    //     // 🔥 RESET FORM
+    //     setFormData(initialFormData);
 
-        // 🔥 RESET FORM
-        setFormData(initialFormData);
-      })
-      .catch((error) => {
-        alert("❌ Error sending email: " + error.text);
-      });
+    //     setTimeout(() => setSuccess(false), 3000);
+    //   })
+    //   .catch((error) => {
+    //     alert("❌ Error sending email: " + error.text);
+    //   });
+    setIsSubmitted(false);
+
+    setTimeout(() => setSuccess(false), 3000);
   };
   // 🔥 Data Arrays
   const countryTypes = [
@@ -579,7 +594,33 @@ ${
                 </span>
               </button>
             </form>
+            {success && (
+              <div className="bg-green-100 border mt-5 border-green-400 text-green-700 px-4 py-3 rounded-xl text-sm text-center">
+                ✅ Form submitted successfully!
+              </div>
+            )}
           </div>
+          {showPopup && (
+            <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+              <div className="bg-white p-6 rounded-2xl shadow-xl max-w-sm text-center">
+                <h3 className="text-lg font-semibold text-[#0F2A44] mb-3">
+                  ⚠️ Token Charges
+                </h3>
+
+                <p className="text-gray-600 text-sm mb-5">
+                  Token service may include additional charges for processing
+                  and delivery.
+                </p>
+
+                <button
+                  onClick={() => setShowPopup(false)}
+                  className="bg-green-600 text-white px-5 py-2 rounded-xl hover:bg-green-700 transition"
+                >
+                  Got it
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>

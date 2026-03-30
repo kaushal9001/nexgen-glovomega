@@ -11,10 +11,13 @@ import {
 
 const ContactusPage = () => {
   const [success, setSuccess] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    location: "",
+    interest: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -45,25 +48,42 @@ const ContactusPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (errors.name || errors.email || errors.phone) return;
+    setIsSubmitted(true); // 🔥 important
 
-    if (!formData.name || !formData.email || !formData.phone) {
-      alert("Fill all fields");
-      return;
-    }
+    let newErrors = {};
 
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email) newErrors.email = "Email is required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      newErrors.email = "Invalid email";
+
+    if (!formData.phone) newErrors.phone = "Phone is required";
+    else if (!/^[6-9]\d{9}$/.test(formData.phone))
+      newErrors.phone = "Invalid phone";
+
+    if (!formData.location) newErrors.location = "Location is required";
+
+    if (!formData.interest) newErrors.interest = "Interest is required";
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) return;
+
+    // ✅ SUCCESS
     console.log("Form Submitted:", formData);
 
-    setSuccess(true); // ✅ success message ON
+    setSuccess(true);
 
-    // 🔥 optional: form reset
     setFormData({
       name: "",
       email: "",
       phone: "",
+      location: "",
+      interest: "",
     });
 
-    // 🔥 auto hide after 3 sec
+    setIsSubmitted(false);
+
     setTimeout(() => setSuccess(false), 3000);
   };
   const contactDetails = [
@@ -151,7 +171,7 @@ const ContactusPage = () => {
                 const value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
                 handleChange("name", value);
               }}
-              className={`w-full border rounded-xl outline-none px-4 py-3 
+              className={`w-full border rounded-xl outline-none px-4 py-3  focus:border-green-600 focus:ring-2 focus:ring-green-200
   ${
     formData.name
       ? errors.name
@@ -160,7 +180,7 @@ const ContactusPage = () => {
       : "border-gray-300"
   }`}
             />
-            {errors.name && (
+            {isSubmitted && errors.name && (
               <p className="text-red-500 text-sm -mt-4">{errors.name}</p>
             )}
 
@@ -169,7 +189,7 @@ const ContactusPage = () => {
               placeholder="Enter Email address"
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
-              className={`w-full border rounded-xl px-4 py-3 outline-none
+              className={`w-full border rounded-xl px-4 py-3 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-200
   ${
     formData.email
       ? errors.email
@@ -178,7 +198,7 @@ const ContactusPage = () => {
       : "border-gray-300"
   }`}
             />
-            {errors.email && (
+            {isSubmitted && errors.email && (
               <p className="text-red-500 text-sm -mt-4">{errors.email}</p>
             )}
 
@@ -191,7 +211,7 @@ const ContactusPage = () => {
                 const value = e.target.value.replace(/\D/g, "");
                 handleChange("phone", value);
               }}
-              className={`w-full border rounded-xl px-4 py-3 outline-none
+              className={`w-full border rounded-xl px-4 py-3 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-200
   ${
     formData.phone
       ? errors.phone
@@ -200,20 +220,30 @@ const ContactusPage = () => {
       : "border-gray-300"
   }`}
             />
-            {errors.phone && (
+            {isSubmitted && errors.phone && (
               <p className="text-red-500 text-sm -mt-4">{errors.phone}</p>
             )}
 
             <input
               type="text"
               placeholder="Select interested Location"
-              className="w-full border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
+              value={formData.location}
+              onChange={(e) => handleChange("location", e.target.value)}
+              className="w-full border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 focus:outline-none"
             />
+            {isSubmitted && errors.location && (
+              <p className="text-red-500 text-sm -mt-4">{errors.location}</p>
+            )}
             <input
               type="text"
               placeholder="Select interest type"
-              className="w-full border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
+              value={formData.interest}
+              onChange={(e) => handleChange("interest", e.target.value)}
+              className="w-full border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 focus:outline-none"
             />
+            {isSubmitted && errors.interest && (
+              <p className="text-red-500 text-sm -mt-4">{errors.interest}</p>
+            )}
 
             {/* Submit Button */}
             <button className="relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group">
@@ -225,7 +255,7 @@ const ContactusPage = () => {
             </button>
           </form>
           {success && (
-            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl text-sm text-center">
+            <div className="bg-green-100 border mt-5 border-green-400 text-green-700 px-4 py-3 rounded-xl text-sm text-center">
               ✅ Form submitted successfully!
             </div>
           )}
