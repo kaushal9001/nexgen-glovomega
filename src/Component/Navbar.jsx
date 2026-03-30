@@ -379,7 +379,7 @@ const Navbar = () => {
                                   to={
                                     sub.title === "Class -3"
                                       ? "/serviceDSC"
-                                      : `/service/${item.title}`
+                                      : `/service/${sub.title}`
                                   }
                                   onClick={() => {
                                     (sub.subItems
@@ -423,9 +423,16 @@ const Navbar = () => {
                   {dropdownData[item] && mobileActive === item && (
                     <div className="pl-4 mt-2 space-y-1">
                       {dropdownData[item].map((sub, i) => (
-                        <p key={i} className="text-sm text-gray-600">
-                          • {sub.title}
-                        </p>
+                        <Link
+                          to={`/service/${sub.title}`}
+                          onClick={() => {
+                            setOpen(false);
+                          }}
+                        >
+                          <p key={i} className="text-sm text-gray-600">
+                            • {sub.title}
+                          </p>
+                        </Link>
                       ))}
                     </div>
                   )}
