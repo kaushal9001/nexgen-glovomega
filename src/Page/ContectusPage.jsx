@@ -1,3 +1,5 @@
+import { FaCheckCircle } from "react-icons/fa";
+import { useState } from "react";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -8,6 +10,62 @@ import {
 } from "react-icons/fa";
 
 const ContactusPage = () => {
+  const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (field, value) => {
+    setFormData({ ...formData, [field]: value });
+
+    let message = "";
+
+    if (field === "name") {
+      if (!value.trim()) message = "Name is required";
+    }
+
+    if (field === "email") {
+      if (!value) message = "Email is required";
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
+        message = "Invalid email";
+    }
+
+    if (field === "phone") {
+      if (!value) message = "Phone is required";
+      else if (!/^[6-9]\d{9}$/.test(value)) message = "Invalid phone";
+    }
+
+    setErrors((prev) => ({ ...prev, [field]: message }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (errors.name || errors.email || errors.phone) return;
+
+    if (!formData.name || !formData.email || !formData.phone) {
+      alert("Fill all fields");
+      return;
+    }
+
+    console.log("Form Submitted:", formData);
+
+    setSuccess(true); // ✅ success message ON
+
+    // 🔥 optional: form reset
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+    });
+
+    // 🔥 auto hide after 3 sec
+    setTimeout(() => setSuccess(false), 3000);
+  };
   const contactDetails = [
     {
       icon: <FaPhoneAlt />,
@@ -84,34 +142,77 @@ const ContactusPage = () => {
             Enquire Now
           </h2>
 
-          <form className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <input
               type="text"
               placeholder="Enter Name"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
+              value={formData.name}
+              onChange={(e) => {
+                const value = e.target.value.replace(/[^a-zA-Z\s]/g, "");
+                handleChange("name", value);
+              }}
+              className={`w-full border rounded-xl outline-none px-4 py-3 
+  ${
+    formData.name
+      ? errors.name
+        ? "border-red-500"
+        : "border-green-500"
+      : "border-gray-300"
+  }`}
             />
+            {errors.name && (
+              <p className="text-red-500 text-sm -mt-4">{errors.name}</p>
+            )}
 
             <input
               type="email"
               placeholder="Enter Email address"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
+              value={formData.email}
+              onChange={(e) => handleChange("email", e.target.value)}
+              className={`w-full border rounded-xl px-4 py-3 outline-none
+  ${
+    formData.email
+      ? errors.email
+        ? "border-red-500"
+        : "border-green-500"
+      : "border-gray-300"
+  }`}
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm -mt-4">{errors.email}</p>
+            )}
 
             <input
               type="tel"
               placeholder="Enter Mobile Number"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
+              value={formData.phone}
+              maxLength={10}
+              onChange={(e) => {
+                const value = e.target.value.replace(/\D/g, "");
+                handleChange("phone", value);
+              }}
+              className={`w-full border rounded-xl px-4 py-3 outline-none
+  ${
+    formData.phone
+      ? errors.phone
+        ? "border-red-500"
+        : "border-green-500"
+      : "border-gray-300"
+  }`}
             />
+            {errors.phone && (
+              <p className="text-red-500 text-sm -mt-4">{errors.phone}</p>
+            )}
 
             <input
               type="text"
               placeholder="Select interested Location"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
+              className="w-full border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
             />
             <input
               type="text"
               placeholder="Select interest type"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
+              className="w-full border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-600"
             />
 
             {/* Submit Button */}
@@ -123,6 +224,11 @@ const ContactusPage = () => {
               </span>
             </button>
           </form>
+          {success && (
+            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl text-sm text-center">
+              ✅ Form submitted successfully!
+            </div>
+          )}
         </div>
       </div>
     </section>
