@@ -376,7 +376,11 @@ const Navbar = () => {
                               <div key={j}>
                                 {/* Main Item */}
                                 <Link
-                                  to={`/service/${sub.title}`}
+                                  to={
+                                    sub.title === "Class -3"
+                                      ? "/serviceDSC"
+                                      : `/service/${item.title}`
+                                  }
                                   onClick={() => {
                                     (sub.subItems
                                       ? setMobileNested(

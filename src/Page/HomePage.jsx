@@ -24,6 +24,7 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import FAQ from "../Component/FAQ";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const services = [
@@ -211,15 +212,17 @@ const HomePage = () => {
                 compliance, tax filings, and payroll management, ensuring every
                 process runs smoothly.
               </p>
+              <Link to={"/about-us"}>
+                {" "}
+                <button className="mt-5 relative cursor-pointer overflow-hidden border border-green-600 text-green-600 px-6 py-3 rounded-2xl text-sm font-medium group">
+                  <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
-              <button className="mt-5 relative cursor-pointer overflow-hidden border border-green-600 text-green-600 px-6 py-3 rounded-2xl text-sm font-medium group">
-                <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
-
-                <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition duration-500">
-                  Learn More
-                  <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-              </button>
+                  <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition duration-500">
+                    Learn More
+                    <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </button>
+              </Link>
             </div>
 
             {/* Right Image */}
@@ -293,15 +296,16 @@ const HomePage = () => {
                 solutions for business registration, taxation, and compliance
                 management.
               </p>
+              <Link to={"/contact-us"}>
+                <button className="mt-5 relative cursor-pointer overflow-hidden border border-green-600 text-green-600 px-6 py-3 rounded-2xl text-sm font-medium group">
+                  <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
-              <button className="mt-5 relative cursor-pointer overflow-hidden border border-green-600 text-green-600 px-6 py-3 rounded-2xl text-sm font-medium group">
-                <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
-
-                <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition duration-500">
-                  Learn More
-                  <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-              </button>
+                  <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition duration-500">
+                    Get Start
+                    <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </button>
+              </Link>
             </div>
 
             {/* Right Image */}
