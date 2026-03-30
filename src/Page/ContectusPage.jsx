@@ -12,12 +12,12 @@ const ContactusPage = () => {
     {
       icon: <FaPhoneAlt />,
       title: "Phone",
-      value: "+91 98765 43210",
+      value: "+91 7021182227",
     },
     {
       icon: <FaEnvelope />,
       title: "Email Us At",
-      value: "support@company.com",
+      value: "info@nexgentaxsolution.com",
     },
     {
       icon: <FaMapMarkerAlt />,
