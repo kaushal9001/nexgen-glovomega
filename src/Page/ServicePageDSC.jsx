@@ -91,6 +91,7 @@ const ServicePageDSC = () => {
   };
 
   const [formData, setFormData] = useState(initialFormData);
+
   // 🔥 Handle Change
   const handleChange = (field, value) => {
     validateField(field, value);
@@ -134,10 +135,39 @@ const ServicePageDSC = () => {
   //   // 👉 API / Email yaha bhejna
   //   // fetch("/api/send-email", { ... })
   // };
+
+  const validateForm = () => {
+    let newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Invalid email";
+    }
+
+    if (!formData.phone) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^[6-9]\d{9}$/.test(formData.phone)) {
+      newErrors.phone = "Invalid phone";
+    }
+
+    setErrorsF(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setIsSubmitted(true);
+
+    const isValid = validateForm(); // 🔥 ADD THIS
+
+    if (!isValid) return; // ❌ stop if invalid
 
     if (formData.extras.length === 0) {
       setError("Select at least one option");
@@ -202,6 +232,15 @@ const ServicePageDSC = () => {
   const certificateTypes = ["Sign", "Encrypt", "Sign + Encrypt"];
   const validityOptions = ["1 Year", "2 Years", "3 Years"];
   const extras = ["Token", "Assistance Service", "Shipping"];
+
+  const isFormValid =
+    formData.name &&
+    !errorsF.name &&
+    formData.email &&
+    !errorsF.email &&
+    formData.phone &&
+    !errorsF.phone &&
+    formData.extras.length > 0;
   return (
     <>
       <section className="py-10 border border-green-200 rounded-2xl shadow-xl shadow-green-300/10 px-5 mx-5 md:mx-10 mt-10  ">
@@ -364,60 +403,64 @@ const ServicePageDSC = () => {
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <input
-                required
                 type="text"
                 placeholder="Enter Name"
                 value={formData.name || ""}
-                onChange={(e) => handleChange("name", e.target.value)}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/[^a-zA-Z\s]/g, ""); // only letters
+                  handleChange("name", value);
+                }}
                 onBlur={(e) => validateField("name", e.target.value)}
                 className={`w-full border rounded-xl px-4 py-3 outline-none transition 
-    ${
-      formData.name
-        ? errorsF.name
-          ? "border-red-500"
-          : "border-green-500"
-        : "border-gray-300"
-    }`}
+${
+  formData.name
+    ? errorsF.name
+      ? "border-red-500"
+      : "border-green-500"
+    : "border-gray-300"
+}`}
               />
               {isSubmitted && errorsF.name && (
                 <p className="text-red-500 text-sm -mt-4">{errorsF.name}</p>
               )}
 
               <input
-                required
                 type="email"
                 placeholder="Enter Email"
                 value={formData.email || ""}
                 onChange={(e) => handleChange("email", e.target.value)}
                 onBlur={(e) => validateField("email", e.target.value)}
                 className={`w-full border rounded-xl px-4 py-3 outline-none transition 
-    ${
-      formData.email
-        ? errorsF.email
-          ? "border-red-500"
-          : "border-green-500"
-        : "border-gray-300"
-    }`}
+${
+  formData.email
+    ? errorsF.email
+      ? "border-red-500"
+      : "border-green-500"
+    : "border-gray-300"
+}`}
               />
               {isSubmitted && errorsF.email && (
                 <p className="text-red-500 text-sm -mt-4">{errorsF.email}</p>
               )}
 
               <input
-                required
                 type="tel"
                 placeholder="Enter Mobile Number"
                 value={formData.phone || ""}
-                onChange={(e) => handleChange("phone", e.target.value)}
+                maxLength={10}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/\D/g, ""); // only numbers
+                  handleChange("phone", value);
+                }}
                 onBlur={(e) => validateField("phone", e.target.value)}
                 className={`w-full border rounded-xl px-4 py-3 outline-none transition 
-    ${
-      formData.phone
-        ? errorsF.phone
-          ? "border-red-500"
-          : "border-green-500"
-        : "border-gray-300"
-    }`}
+${
+  formData.phone
+    ? errorsF.phone
+      ? "border-red-500"
+      : "border-green-500"
+    : "border-gray-300"
+}`}
               />
               {isSubmitted && errorsF.phone && (
                 <p className="text-red-500 text-sm -mt-4">{errorsF.phone}</p>
@@ -526,7 +569,8 @@ const ServicePageDSC = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group"
+                // disabled={!isFormValid} // 🔥 important
+                className={`relative overflow-hidden border border-green-600 px-6 py-2 rounded-2xl text-sm font-medium group transition`}
               >
                 <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
