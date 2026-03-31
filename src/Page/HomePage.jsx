@@ -443,7 +443,7 @@ const HomePage = () => {
 
                 window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
               }}
-              className="relative overflow-hidden border  border-green-600 text-green-600 px-8 py-3 rounded-2xl text-sm font-medium group "
+              className="relative cursor-pointer overflow-hidden border  border-green-600 text-green-600 px-8 py-3 rounded-2xl text-sm font-medium group "
             >
               <span className="w-5 h-5 absolute left-[37px] top-[14px] bg-green-600 rounded-full animate-ping"></span>
 

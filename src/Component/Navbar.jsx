@@ -273,11 +273,11 @@ const Navbar = () => {
 
               window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
             }}
-            className="hidden lg:flex items-center relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group"
+            className="hidden cursor-pointer lg:flex items-center relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group"
           >
-            <span className="w-4 h-4 absolute left-[25.5px] bg-green-600 rounded-full animate-ping"></span>
+            <span className="w-4 h-4 absolute left-[25px] bg-green-600 rounded-full animate-ping"></span>
             <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
-            <span className="relative z-10 flex gap-2 items-center group-hover:text-white transition">
+            <span className=" relative z-10 flex gap-2 items-center group-hover:text-white transition">
               <FaWhatsapp className="text-lg" />
               Enquire Now
             </span>
@@ -285,7 +285,7 @@ const Navbar = () => {
 
           <button
             onClick={() => setOpen(true)}
-            className="lg:hidden border border-green-600 text-green-600 px-4 py-2 rounded-2xl"
+            className="lg:hidden  border border-green-600 text-green-600 px-4 py-2 rounded-2xl"
           >
             <FaBars />
           </button>
@@ -451,7 +451,7 @@ const Navbar = () => {
                     "_blank",
                   );
                 }}
-                className="relative overflow-hidden border  border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group "
+                className="relative cursor-pointer overflow-hidden border  border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group "
               >
                 <span className="w-4 h-4 absolute left-[99px] top-[10px] bg-green-600 rounded-full animate-ping"></span>
 

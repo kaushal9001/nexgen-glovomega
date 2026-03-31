@@ -18,6 +18,7 @@ import {
 
 const ServicePageDSC = () => {
   const [success, setSuccess] = useState(false);
+  const [shakeKey, setShakeKey] = useState(0);
   const [error, setError] = useState("");
   const [errorsF, setErrorsF] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -166,7 +167,11 @@ const ServicePageDSC = () => {
 
     setErrorsF(newErrors);
 
-    return Object.keys(newErrors).length === 0;
+    // return Object.keys(newErrors).length === 0;
+    if (Object.keys(newErrors).length > 0) {
+      setShakeKey((prev) => prev + 1); // 🔥 har click pe shake
+      return;
+    }
   };
 
   const handleSubmit = (e) => {
@@ -411,13 +416,19 @@ const ServicePageDSC = () => {
             </div>
           </div>
           {/* Right Side Form */}
-          <div className="border border-gray-200 rounded-2xl p-8 shadow-sm relative">
+          <div
+            key={shakeKey}
+            className={`border border-gray-200 rounded-2xl p-8 shadow-sm relative ${
+              shakeKey > 0 ? "shake" : ""
+            }`}
+          >
             <h2 className="text-2xl font-semibold text-[#0F2A44] mb-6">
               Enquire Now
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <input
+                key={`name-${shakeKey}`}
                 type="text"
                 placeholder="Enter Name"
                 value={formData.name || ""}
@@ -433,13 +444,14 @@ ${
       ? "border-red-500"
       : "border-green-500"
     : "border-gray-300"
-}`}
+} ${isSubmitted && errorsF.name ? " shake" : ""}`}
               />
               {isSubmitted && errorsF.name && (
                 <p className="text-red-500 text-sm -mt-4">{errorsF.name}</p>
               )}
 
               <input
+                key={`email-${shakeKey}`}
                 type="email"
                 placeholder="Enter Email"
                 value={formData.email || ""}
@@ -452,13 +464,14 @@ ${
       ? "border-red-500"
       : "border-green-500"
     : "border-gray-300"
-}`}
+} ${isSubmitted && errorsF.email ? " shake" : ""}`}
               />
               {isSubmitted && errorsF.email && (
                 <p className="text-red-500 text-sm -mt-4">{errorsF.email}</p>
               )}
 
               <input
+                key={`phone-${shakeKey}`}
                 type="tel"
                 placeholder="Enter Mobile Number"
                 value={formData.phone || ""}
@@ -475,7 +488,7 @@ ${
       ? "border-red-500"
       : "border-green-500"
     : "border-gray-300"
-}`}
+} ${isSubmitted && errorsF.phone ? " shake" : ""}`}
               />
               {isSubmitted && errorsF.phone && (
                 <p className="text-red-500 text-sm -mt-4">{errorsF.phone}</p>
