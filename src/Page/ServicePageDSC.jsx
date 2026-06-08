@@ -261,10 +261,145 @@ const ServicePageDSC = () => {
     formData.phone &&
     !errorsF.phone &&
     formData.extras.length > 0;
+
+  const dscInfo = [
+    {
+      id: 1,
+      title: "Digital Signature Certificate",
+      desc: "A DSC is a secure digital key issued by a Certifying Authority to verify the identity of the holder electronically.",
+    },
+    {
+      id: 2,
+      title: "Electronic Authentication",
+      desc: "It allows individuals and businesses to digitally sign documents with legal validity and authenticity.",
+    },
+    {
+      id: 3,
+      title: "Legally Recognized",
+      desc: "Digital signatures are legally recognized under the Information Technology Act, 2000.",
+    },
+    {
+      id: 4,
+      title: "Secure Transactions",
+      desc: "Ensures data integrity, authenticity, and security in online transactions and filings.",
+    },
+    {
+      id: 5,
+      title: "Paperless Documentation",
+      desc: "Eliminates the need for physical signatures and enables faster document processing.",
+    },
+    {
+      id: 6,
+      title: "Compliance Requirement",
+      desc: "Required for MCA filings, GST filings, Income Tax filings, e-tendering, and various government portals.",
+    },
+  ];
+  const whoNeedsDSC = [
+    {
+      id: 1,
+      title: "Company Directors",
+      desc: "Directors require DSC for MCA filings, annual compliance, and company registrations.",
+    },
+    {
+      id: 2,
+      title: "Business Owners",
+      desc: "Businesses use DSC for tax filings, registrations, and government compliance activities.",
+    },
+    {
+      id: 3,
+      title: "Chartered Accountants",
+      desc: "CAs use DSC for Income Tax filings, audits, and client compliance work.",
+    },
+    {
+      id: 4,
+      title: "Company Secretaries",
+      desc: "CS professionals require DSC for corporate filings and regulatory submissions.",
+    },
+    {
+      id: 5,
+      title: "GST Registered Businesses",
+      desc: "Businesses registered under GST often require DSC for filing returns and compliance activities.",
+    },
+    {
+      id: 6,
+      title: "Government Tender Participants",
+      desc: "Organizations participating in e-tenders require DSC for secure bidding and submissions.",
+    },
+  ];
+  const dscDocuments = [
+    "PAN Card",
+    "Aadhaar Card",
+    "Passport Size Photograph",
+    "Mobile Number",
+    "Email ID",
+    "Address Proof",
+  ];
+
+  const dscProcess = [
+    {
+      id: "01",
+      title: "Submit Documents",
+      desc: "Provide identity proof, address proof, photograph, and contact details.",
+    },
+    {
+      id: "02",
+      title: "Verification Process",
+      desc: "Complete OTP, Aadhaar, or video verification as required.",
+    },
+    {
+      id: "03",
+      title: "Application Filing",
+      desc: "DSC application is submitted to the authorized Certifying Authority.",
+    },
+    {
+      id: "04",
+      title: "Document Review",
+      desc: "The submitted documents are verified and validated.",
+    },
+    {
+      id: "05",
+      title: "Approval",
+      desc: "Application is approved after successful verification.",
+    },
+    {
+      id: "06",
+      title: "DSC Issued",
+      desc: "Digital Signature Certificate is generated and activated for use.",
+    },
+  ];
+  const dscBenefits = [
+    {
+      title: "Secure Digital Transactions",
+      desc: "Protects online transactions and documents from tampering and unauthorized access.",
+    },
+    {
+      title: "Legal Recognition",
+      desc: "Digital signatures are legally valid and recognized under the Information Technology Act.",
+    },
+    {
+      title: "Fast Document Signing",
+      desc: "Sign and submit documents electronically without physical paperwork.",
+    },
+    {
+      title: "Compliance Made Easy",
+      desc: "Required for MCA, GST, Income Tax, EPFO, and other government filings.",
+    },
+    {
+      title: "Identity Authentication",
+      desc: "Verifies the identity of the signer and ensures document authenticity.",
+    },
+    {
+      title: "Paperless Operations",
+      desc: "Promotes environmentally friendly and efficient digital workflows.",
+    },
+  ];
   return (
     <>
-      <section className="py-10 border border-green-200 rounded-2xl shadow-xl shadow-green-300/10 px-5 mx-5 md:mx-10 mt-10  ">
-        <div className=" grid lg:grid-cols-2 gap-12">
+      <section
+        className="md:px-10 px-5 mt-10
+       "
+      >
+        <div className=" grid lg:grid-cols-2 gap-12 border border-green-200 rounded-4xl p-8">
           {/* Left Side */}
           {/* <div
             onSubmit={handleSubmit}
@@ -634,6 +769,212 @@ ${
               </div>
             </div>
           )}
+        </div>
+      </section>
+      <section className="md:px-10 px-5 mt-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-[#0F2A44]">What is DSC?</h2>
+
+          <div className="w-20 h-[3px] bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7] mx-auto mt-3 rounded"></div>
+
+          <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+            A Digital Signature Certificate (DSC) is a secure electronic
+            signature used to authenticate the identity of individuals and
+            organizations. It provides security, authenticity, and legal
+            validity to online transactions and digital documents.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {dscInfo.map((item) => (
+            <div
+              key={item.id}
+              className="border border-green-200 rounded-3xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-5">
+                <span className="text-green-700 font-bold text-lg">
+                  0{item.id}
+                </span>
+              </div>
+
+              <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-600 leading-7">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 border border-green-200 bg-green-50 rounded-3xl p-8">
+          <h3 className="text-2xl font-bold text-[#0F2A44] mb-4">
+            Secure & Legally Valid Digital Signing
+          </h3>
+
+          <p className="text-gray-700 leading-8">
+            DSC enables individuals and businesses to sign documents
+            electronically with complete security and legal validity. It is
+            widely used for MCA, GST, Income Tax, e-Tendering, and various
+            government compliance requirements.
+          </p>
+        </div>
+      </section>
+      <section className="md:px-10 px-5 mt-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-[#0F2A44]">Who Needs DSC?</h2>
+
+          <div className="w-20 h-[3px] bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7] mx-auto mt-3 rounded"></div>
+
+          <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+            DSC is required by individuals, professionals, businesses, and
+            organizations involved in online filings, regulatory compliance,
+            government registrations, and secure digital transactions.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {whoNeedsDSC.map((item) => (
+            <div
+              key={item.id}
+              className="border border-green-200 rounded-3xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mb-5">
+                <span className="text-green-700 font-bold text-lg">
+                  0{item.id}
+                </span>
+              </div>
+
+              <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-600 leading-7">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 border border-green-200 bg-green-50 rounded-3xl p-8">
+          <h3 className="text-2xl font-bold text-[#0F2A44] mb-4">
+            Essential for Digital Compliance
+          </h3>
+
+          <p className="text-gray-700 leading-8">
+            Whether you are a company director, business owner, CA, CS, or
+            government contractor, a DSC helps ensure secure digital signing,
+            legal compliance, and seamless interaction with government portals.
+          </p>
+        </div>
+      </section>
+      <section className="md:px-10 px-5 mt-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-[#0F2A44]">
+            Documents Required & DSC Application Process
+          </h2>
+
+          <div className="w-20 h-[3px] bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7] mx-auto mt-3 rounded"></div>
+
+          <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+            Keep the required documents ready and follow a simple verification
+            process to obtain your Digital Signature Certificate quickly and
+            securely.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Documents */}
+          <div className="border border-green-200 rounded-3xl p-8">
+            <h3 className="text-2xl font-bold text-[#0F2A44] mb-6">
+              Required Documents
+            </h3>
+
+            <div className="space-y-4">
+              {dscDocuments.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-4 border border-green-100 rounded-2xl p-4"
+                >
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-700 font-bold">
+                    ✓
+                  </div>
+
+                  <p className="font-medium text-[#0F2A44]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Process */}
+          <div className="border border-green-200 rounded-3xl p-8">
+            <h3 className="text-2xl font-bold text-[#0F2A44] mb-6">
+              DSC Application Process
+            </h3>
+
+            <div className="space-y-4">
+              {dscProcess.map((step) => (
+                <div
+                  key={step.id}
+                  className="flex gap-4 border border-green-100 rounded-2xl p-4"
+                >
+                  <div className="min-w-[50px] h-[50px] bg-green-100 rounded-full flex items-center justify-center font-bold text-green-700">
+                    {step.id}
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-[#0F2A44] mb-1">
+                      {step.title}
+                    </h4>
+
+                    <p className="text-gray-600">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="md:px-10 px-5 mt-20">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-[#0F2A44]">Benefits of DSC</h2>
+
+          <div className="w-20 h-[3px] bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7] mx-auto mt-3 rounded"></div>
+
+          <p className="text-gray-600 mt-4 max-w-3xl mx-auto">
+            A Digital Signature Certificate provides security, authenticity, and
+            convenience for businesses and professionals involved in online
+            transactions and regulatory compliance.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {dscBenefits.map((item, index) => (
+            <div
+              key={index}
+              className="border border-green-200 rounded-3xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                ✓
+              </div>
+
+              <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-600 leading-7">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 border border-green-200 bg-green-50 rounded-3xl p-8">
+          <h3 className="text-2xl font-bold text-[#0F2A44] mb-4">
+            Secure Your Digital Identity
+          </h3>
+
+          <p className="text-gray-700 leading-8">
+            DSC simplifies online compliance, enhances security, and enables
+            legally valid digital signing for businesses, professionals, and
+            organizations. It is an essential tool for today's digital business
+            environment.
+          </p>
         </div>
       </section>
     </>

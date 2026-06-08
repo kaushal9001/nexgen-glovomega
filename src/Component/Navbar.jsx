@@ -165,7 +165,7 @@ const Navbar = () => {
                             >
                               <Link
                                 onClick={() => setActiveMenu(null)}
-                                to={`/service/${cat}`}
+                                to={`${cat}`}
                               >
                                 {submenuItems[cat]?.length > 0 || cat}
                               </Link>
@@ -195,7 +195,7 @@ const Navbar = () => {
                               to={
                                 item.title === "Class -3"
                                   ? "/serviceDSC"
-                                  : `/service/${item.title}`
+                                  : `${item.title}`
                               }
                               key={i}
                               className="text-gray-700 flex text-sm hover:text-green-500 cursor-pointer"
@@ -246,7 +246,7 @@ const Navbar = () => {
                       <div className="w-[220px] space-y-2 border-l-2 pl-2  ">
                         {dropdownData[item].map((sub, i) => (
                           <Link
-                            to={`/service/${sub.title}`}
+                            to={`${sub.title}`}
                             key={i}
                             className="text-gray-700 flex text-sm hover:text-green-600 cursor-pointer"
                           >
@@ -354,7 +354,7 @@ const Navbar = () => {
                           )}
                           {submenuItems[cat]?.length > 0 || (
                             <Link
-                              to={`/service/${cat}`}
+                              to={`${cat}`}
                               onClick={() => {
                                 setMobileSub(mobileSub === cat ? null : cat);
                                 setOpen(false);
@@ -379,7 +379,7 @@ const Navbar = () => {
                                   to={
                                     sub.title === "Class -3"
                                       ? "/serviceDSC"
-                                      : `/service/${sub.title}`
+                                      : `${sub.title}`
                                   }
                                   onClick={() => {
                                     (sub.subItems
@@ -424,7 +424,7 @@ const Navbar = () => {
                     <div className="pl-4 mt-2 space-y-1">
                       {dropdownData[item].map((sub, i) => (
                         <Link
-                          to={`/service/${sub.title}`}
+                          to={`${sub.title}`}
                           onClick={() => {
                             setOpen(false);
                           }}

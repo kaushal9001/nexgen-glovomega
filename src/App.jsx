@@ -15,6 +15,37 @@ import AboutPage from "./Page/AboutPage";
 import NotFound from "./Page/NotFound";
 import ServicePage from "./Page/ServicePage";
 import ServicePageDSC from "./Page/ServicePageDSC";
+import GSTCalculatorPage from "./Page/GSTCalculatorPage";
+import IncomeTaxCalculator from "./Page/IncomeTaxCalculator";
+import MutualFunds from "./Page/MutualFunds";
+import StockAdvisory from "./Page/StockAdvisory";
+import IncomeTaxReturnFilling from "./Page/IncomeTaxReturnFilling";
+import GSTRegistrationReturns from "./Page/GSTRegistrationReturns";
+import TDSReturnPayment from "./Page/TDSReturnPayment";
+import CompanyRegistration from "./Page/CompanyRegistration";
+import ROCFiling from "./Page/ROCFiling";
+import DirectorKYC from "./Page/DirectorKYC";
+import ProfessionTax from "./Page/ProfessionTax";
+import ProvidentFund from "./Page/ProvidentFund";
+import ESIC from "./Page/ESIC";
+import LabourWelfareFund from "./Page/LabourWelfareFund";
+import AccountingServices from "./Page/AccountingServices";
+import InternalAudit from "./Page/InternalAudit";
+import StatutoryAudit from "./Page/StatutoryAudit";
+import StockAudit from "./Page/StockAudit";
+import GSTAudit from "./Page/GSTAudit";
+import FifteenCACBServices from "./Page/fifteenCACBServices";
+import BusinessSetup from "./Page/BusinessSetup";
+import CompanySetupUAE from "./Page/CompanySetupUAE";
+import VisaAssistance from "./Page/VisaAssistance";
+import GumastaLicense from "./Page/GumastaLicense";
+import FSSAIRegistration from "./Page/FSSAIRegistration";
+import MSMERegistration from "./Page/MSMERegistration";
+import IECRegistration from "./Page/IECRegistration";
+import PANRegistration from "./Page/PANRegistration";
+import TANRegistration from "./Page/TANRegistration";
+import ERPSetup from "./Page/ERPSetup";
+import CustomizationStats from "./Page/customizationStats";
 
 const App = () => {
   const lenis = useLenis((lenis) => {
@@ -38,6 +69,61 @@ const App = () => {
             <Route path="/about-us" element={<AboutPage />} />
             <Route path="/service/:title" element={<ServicePage />} />
             <Route path="/serviceDSC/" element={<ServicePageDSC />} />
+            <Route path="/GST Calculator/" element={<GSTCalculatorPage />} />
+            <Route path="/Mutual Funds/" element={<MutualFunds />} />
+            <Route path="/Stock Advisory/" element={<StockAdvisory />} />
+            <Route
+              path="/Income Tax Return Filling/"
+              element={<IncomeTaxReturnFilling />}
+            />
+            <Route
+              path="/GST Registration & Returns/"
+              element={<GSTRegistrationReturns />}
+            />
+            <Route
+              path="/TDS Return & Payment/"
+              element={<TDSReturnPayment />}
+            />
+            <Route
+              path="/Company Registration/"
+              element={<CompanyRegistration />}
+            />
+            <Route path="/ROC Filing/" element={<ROCFiling />} />
+            <Route path="/Director KYC/" element={<DirectorKYC />} />
+            <Route path="/Profession Tax/" element={<ProfessionTax />} />
+            <Route path="/Provident Fund/" element={<ProvidentFund />} />
+            <Route path="/ESIC/" element={<ESIC />} />
+            <Route
+              path="/Labour Welfare Fund/"
+              element={<LabourWelfareFund />}
+            />
+            <Route
+              path="/Accounting Services/"
+              element={<AccountingServices />}
+            />
+            <Route path="/Internal Audit/" element={<InternalAudit />} />
+            <Route path="/Statutory Audit/" element={<StatutoryAudit />} />
+            <Route path="/Stock Audit/" element={<StockAudit />} />
+            <Route path="/GST Audit/" element={<GSTAudit />} />
+            <Route
+              path="/15 CA-CB Services/"
+              element={<FifteenCACBServices />}
+            />
+            <Route path="/Business Setup/" element={<BusinessSetup />} />
+            <Route path="/Company Setup UAE/" element={<CompanySetupUAE />} />
+            <Route path="/Visa Assistance/" element={<VisaAssistance />} />
+            <Route path="/Gumasta/" element={<GumastaLicense />} />
+            <Route path="/FSSAI/" element={<FSSAIRegistration />} />
+            <Route path="/MSME/Udyam/" element={<MSMERegistration />} />
+            <Route path="/IEC/" element={<IECRegistration />} />
+            <Route path="/PAN/" element={<PANRegistration />} />
+            <Route path="/TAN/" element={<TANRegistration />} />
+            <Route path="/ERP Setup/" element={<ERPSetup />} />
+            <Route path="/Customization/" element={<CustomizationStats />} />
+            <Route
+              path="/Income Tax Calculator/"
+              element={<IncomeTaxCalculator />}
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
