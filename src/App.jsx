@@ -47,8 +47,7 @@ import TANRegistration from "./Page/TANRegistration";
 import ERPSetup from "./Page/ERPSetup";
 
 import FifteenCACBServices from "./Page/FifteenCACBServices";
-import CustomizationStats from "./Page/customizationStats";
-
+import CustomizationStats from "./Page/CustomizationStats";
 const App = () => {
   const lenis = useLenis((lenis) => {
     // called every scroll
