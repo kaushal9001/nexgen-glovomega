@@ -293,9 +293,9 @@ const GSTCalculatorPage = () => {
             </div>
             {/* Amount */}
             {/* GST Rates */}
-            <div className="flex mb-5 gap-5  justify-between  items-center">
+            <div className="flex  sm:flex-row mb-5 gap-5 flex-col justify-between  items-center">
               {/* Amount */}
-              <div className=" w-[50%]  ">
+              <div className=" w-full sm:w-[50%]  ">
                 <label className="block text-[#0F2A44] font-medium mb-3">
                   Enter Amount
                 </label>
@@ -310,7 +310,7 @@ const GSTCalculatorPage = () => {
               </div>
 
               {/* GST Rates */}
-              <div className="w-[50%]  ">
+              <div className="w-full sm:w-[50%]  ">
                 {" "}
                 <div className="flex items-center gap-1 mb-3 ">
                   <label className="block text-[#0F2A44]  font-medium">

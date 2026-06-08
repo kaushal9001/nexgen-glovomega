@@ -445,8 +445,6 @@ const HomePage = () => {
               }}
               className="relative cursor-pointer overflow-hidden border  border-green-600 text-green-600 px-8 py-3 rounded-2xl text-sm font-medium group "
             >
-              <span className="w-5 h-5 absolute left-[37px] top-[14px] bg-green-600 rounded-full animate-ping"></span>
-
               <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
               <span className="relative z-10 w-30 flex items-center gap-2 justify-center group-hover:text-white transition">

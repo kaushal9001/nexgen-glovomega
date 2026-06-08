@@ -511,7 +511,7 @@ const ServicePageDSC = () => {
           <div className=" ">
             <h1 className="text-4xl font-semibold text-[#0F2A44] mb-6">
               {" "}
-              By DSC Service
+              DSC Service
             </h1>
 
             <p className="text-gray-600 mb-8">

@@ -76,47 +76,40 @@ const IncomeTaxCalculator = () => {
 
   const [result, setResult] = useState({
     tax: 0,
+    rebate: 0,
+    taxAfterRebate: 0,
     surcharge: 0,
     cess: 0,
     totalTax: 0,
   });
-
   const resultCards = [
-    {
-      title: "Income Tax",
-      value: result.tax,
-    },
-    {
-      title: "Surcharge",
-      value: result.surcharge,
-    },
-    {
-      title: "Health & Education Cess",
-      value: result.cess,
-    },
-    {
-      title: "Total Tax Liability",
-      value: result.totalTax,
-    },
+    [
+      {
+        title: "Income Tax",
+        value: result.tax,
+      },
+      {
+        title: "Rebate u/s 87A",
+        value: result.rebate,
+      },
+      {
+        title: "Income Tax After Rebate",
+        value: result.taxAfterRebate,
+      },
+      {
+        title: "Surcharge",
+        value: result.surcharge,
+      },
+      {
+        title: "Health & Education Cess",
+        value: result.cess,
+      },
+      {
+        title: "Total Tax Liability",
+        value: result.totalTax,
+      },
+    ],
   ];
-  const resetCalculator = () => {
-    setIncome("");
-    setAgeGroup("below60");
-    setRegime("new");
-    setDeduction80C("");
-    setDeduction80D("");
-    setHomeLoan("");
-    setOtherDeduction("");
-
-    setResult({
-      income: 0,
-      totalDeductions: 0,
-      taxableIncome: 0,
-      tax: 0,
-      netIncome: 0,
-      regime: "New Regime",
-    });
-  };
 
   const totalDeductions =
     Number(deduction80C || 0) +
@@ -169,21 +162,102 @@ const IncomeTaxCalculator = () => {
   }, [income, deduction80C, deduction80D, homeLoan, otherDeduction, regime]);
 
   const calculateTax = () => {
-    const income = Number(taxableIncome || 0);
+    const income = Number(taxableIncome);
 
-    const tax = income * 0.1;
+    if (!income || income <= 0) {
+      alert("Please enter valid income");
+      return;
+    }
 
-    const surcharge = tax > 500000 ? tax * 0.1 : 0;
+    let tax = 0;
+    let rebate = 0;
+    let surcharge = 0;
+    let cess = 0;
 
-    const cess = (tax + surcharge) * 0.04;
+    // OLD REGIME
+    if (newRegime === "No") {
+      if (income <= 250000) {
+        tax = 0;
+      } else if (income <= 500000) {
+        tax = (income - 250000) * 0.05;
+      } else if (income <= 1000000) {
+        tax = 12500 + (income - 500000) * 0.2;
+      } else {
+        tax = 112500 + (income - 1000000) * 0.3;
+      }
 
-    const totalTax = tax + surcharge + cess;
+      // Rebate 87A
+      if (income <= 500000) {
+        rebate = Math.min(tax, 12500);
+      }
+    }
+
+    // NEW REGIME
+    else {
+      if (income <= 300000) {
+        tax = 0;
+      } else if (income <= 700000) {
+        tax = (income - 300000) * 0.05;
+      } else if (income <= 1000000) {
+        tax = 20000 + (income - 700000) * 0.1;
+      } else if (income <= 1200000) {
+        tax = 50000 + (income - 1000000) * 0.15;
+      } else if (income <= 1500000) {
+        tax = 80000 + (income - 1200000) * 0.2;
+      } else if (income <= 5000000) {
+        tax = 140000 + (income - 1500000) * 0.3;
+      } else if (income <= 10000000) {
+        tax = 1190000 + (income - 5000000) * 0.3;
+      } else if (income <= 20000000) {
+        tax = 2690000 + (income - 10000000) * 0.3;
+      } else {
+        tax = 5690000 + (income - 20000000) * 0.3;
+      }
+
+      // New Regime Rebate
+      if (income <= 700000) {
+        rebate = tax;
+      }
+    }
+
+    // Tax After Rebate
+    const taxAfterRebate = Math.max(0, tax - rebate);
+
+    // Surcharge
+    if (income > 50000000) {
+      surcharge = taxAfterRebate * 0.37;
+    } else if (income > 20000000) {
+      surcharge = taxAfterRebate * 0.25;
+    } else if (income > 10000000) {
+      surcharge = taxAfterRebate * 0.15;
+    } else if (income > 5000000) {
+      surcharge = taxAfterRebate * 0.1;
+    }
+
+    // Cess
+    cess = (taxAfterRebate + surcharge) * 0.04;
+
+    const totalTax = taxAfterRebate + surcharge + cess;
 
     setResult({
-      tax,
-      surcharge,
-      cess,
-      totalTax,
+      tax: Math.round(tax),
+      rebate: Math.round(rebate),
+      taxAfterRebate: Math.round(taxAfterRebate),
+      surcharge: Math.round(surcharge),
+      cess: Math.round(cess),
+      totalTax: Math.round(totalTax),
+    });
+  };
+  const resetCalculator = () => {
+    setTaxableIncome("");
+
+    setResult({
+      tax: 0,
+      rebate: 0,
+      taxAfterRebate: 0,
+      surcharge: 0,
+      cess: 0,
+      totalTax: 0,
     });
   };
   return (
@@ -348,6 +422,14 @@ transition-all
                 {
                   title: "Income Tax",
                   value: result.tax,
+                },
+                {
+                  title: "Rebate u/s 87A",
+                  value: result.rebate,
+                },
+                {
+                  title: "Income Tax After Rebate",
+                  value: result.taxAfterRebate,
                 },
                 {
                   title: "Surcharge",

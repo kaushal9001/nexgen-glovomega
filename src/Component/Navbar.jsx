@@ -275,7 +275,6 @@ const Navbar = () => {
             }}
             className="hidden cursor-pointer lg:flex items-center relative overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group"
           >
-            <span className="w-4 h-4 absolute left-[25px] bg-green-600 rounded-full animate-ping"></span>
             <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
             <span className=" relative z-10 flex gap-2 items-center group-hover:text-white transition">
               <FaWhatsapp className="text-lg" />
@@ -453,8 +452,6 @@ const Navbar = () => {
                 }}
                 className="relative cursor-pointer overflow-hidden border  border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group "
               >
-                <span className="w-4 h-4 absolute left-[99px] top-[10px] bg-green-600 rounded-full animate-ping"></span>
-
                 <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
                 <span className="relative z-10 flex items-center gap-2 justify-center group-hover:text-white transition">
