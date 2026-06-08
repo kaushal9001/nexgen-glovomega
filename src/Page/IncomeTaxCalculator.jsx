@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-const assessmentYears = ["2026-27", "2025-26", "2024-25"];
-
 const taxpayerTypes = [
   "Individual",
   "HUF",
@@ -56,9 +54,12 @@ const taxSlabs = [
     color: "text-red-700",
   },
 ];
-
+const assessmentYears = Array.from({ length: 6 }, (_, index) => {
+  const year = 2026 - index;
+  return `${year}-${String(year + 1).slice(-2)}`;
+});
 const IncomeTaxCalculator = () => {
-  const [assessmentYear, setAssessmentYear] = useState("2026-27");
+  const [assessmentYear, setAssessmentYear] = useState(assessmentYears[0]);
   const [taxpayer, setTaxpayer] = useState("Individual");
   const [category, setCategory] = useState("Below 60 Years");
   const [residentialStatus, setResidentialStatus] = useState("Resident");
@@ -82,6 +83,7 @@ const IncomeTaxCalculator = () => {
     cess: 0,
     totalTax: 0,
   });
+
   const resultCards = [
     [
       {
@@ -286,8 +288,10 @@ const IncomeTaxCalculator = () => {
                   onChange={(e) => setAssessmentYear(e.target.value)}
                   className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-green-600 focus:ring-2 focus:ring-green-200 outline-none"
                 >
-                  {assessmentYears.map((item, i) => (
-                    <option key={i}>{item}</option>
+                  {assessmentYears.map((year, index) => (
+                    <option key={index} value={year}>
+                      {year}
+                    </option>
                   ))}
                 </select>
               </div>
