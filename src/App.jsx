@@ -45,8 +45,9 @@ import IECRegistration from "./Page/IECRegistration";
 import PANRegistration from "./Page/PANRegistration";
 import TANRegistration from "./Page/TANRegistration";
 import ERPSetup from "./Page/ERPSetup";
-import CustomizationStats from "./Page/customizationStats";
+
 import FifteenCACBServices from "./Page/FifteenCACBServices";
+import CustomizationStats from "./Page/customizationStats";
 
 const App = () => {
   const lenis = useLenis((lenis) => {
