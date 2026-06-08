@@ -34,7 +34,7 @@ import InternalAudit from "./Page/InternalAudit";
 import StatutoryAudit from "./Page/StatutoryAudit";
 import StockAudit from "./Page/StockAudit";
 import GSTAudit from "./Page/GSTAudit";
-import FifteenCACBServices from "./Page/fifteenCACBServices";
+
 import BusinessSetup from "./Page/BusinessSetup";
 import CompanySetupUAE from "./Page/CompanySetupUAE";
 import VisaAssistance from "./Page/VisaAssistance";
@@ -46,6 +46,7 @@ import PANRegistration from "./Page/PANRegistration";
 import TANRegistration from "./Page/TANRegistration";
 import ERPSetup from "./Page/ERPSetup";
 import CustomizationStats from "./Page/customizationStats";
+import FifteenCACBServices from "./Page/FifteenCACBServices";
 
 const App = () => {
   const lenis = useLenis((lenis) => {
