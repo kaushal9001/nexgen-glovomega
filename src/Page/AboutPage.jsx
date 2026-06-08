@@ -220,35 +220,7 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <section className="px-5 md:px-10 mt-20 pb-10">
-        {/* Heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-[#0F2A44]">Our Investors</h2>
-          <p className="text-gray-600 text-xl mt-4">
-            We are backed by visionary, world-class institutions and investors.
-          </p>
 
-          <div className="w-20 h-[3px]  bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7] mx-auto mt-3 rounded"></div>
-        </div>
-
-        {/* Slider */}
-        <div className="overflow-hidden relative">
-          <div className="flex w-max  animate-scroll cursor-pointer hover:animate-none gap-8">
-            {[...clientsImg, ...clientsImg].map((logo, index) => (
-              <div
-                key={index}
-                className="flex items-center  justify-center  rounded-xl px-8 py-3 mb-5 min-w-[160px]  shadow-md shadow-green-900/50  "
-              >
-                <img
-                  src={logo}
-                  alt="client"
-                  className="h-8 w-30 object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
       <section className="py-16 bg-[#f0f8fb]">
         <div className=" px-5 md:px-10 flex flex-col-reverse lg:flex-row items-center gap-10">
           {/* Left Content */}
