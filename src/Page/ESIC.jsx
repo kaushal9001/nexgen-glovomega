@@ -116,7 +116,7 @@ const ESIC = () => {
 
               {/* Stats */}
 
-              <div className="flex flex-wrap gap-10 mt-10">
+              {/* <div className="flex flex-wrap gap-10 mt-10">
                 {esicStats.map((item, index) => (
                   <div key={index}>
                     <h3 className="text-3xl font-bold text-green-600">
@@ -126,7 +126,7 @@ const ESIC = () => {
                     <p className="text-sm text-gray-600 mt-1">{item.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Form Side */}

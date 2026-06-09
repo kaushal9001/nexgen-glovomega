@@ -48,6 +48,9 @@ import ERPSetup from "./Page/ERPSetup";
 
 import FifteenCACBServices from "./Page/FifteenCACBServices";
 import CustomizationStats from "./Page/CustomizationStats";
+import ConfidentialityPolicy from "./Page/ConfidentialityPolicy";
+import DisclaimerPolicy from "./Page/DisclaimerPolicy";
+import Review from "./Page/Review";
 
 const App = () => {
   const lenis = useLenis((lenis) => {
@@ -65,6 +68,11 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route
+              path="/confidentiality/"
+              element={<ConfidentialityPolicy />}
+            />
+            <Route path="/disclaimer/" element={<DisclaimerPolicy />} />
             <Route path="/services" element={<Services />} />
             <Route path="/blogs" element={<BlogPage />} />
             <Route path="/contact-us" element={<ContactusPage />} />
@@ -122,6 +130,7 @@ const App = () => {
             <Route path="/TAN/" element={<TANRegistration />} />
             <Route path="/ERP Setup/" element={<ERPSetup />} />
             <Route path="/Customization/" element={<CustomizationStats />} />
+            <Route path="/review/" element={<Review />} />
             <Route
               path="/Income Tax Calculator/"
               element={<IncomeTaxCalculator />}

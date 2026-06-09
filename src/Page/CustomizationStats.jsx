@@ -204,20 +204,24 @@ const CustomizationStats = () => {
               <div className="flex flex-wrap gap-4 mt-8">
                 <Link
                   to={"/contact-us"}
-                  className="bg-green-600 hover:bg-green-700 text-white px-7 py-3 rounded-2xl font-medium transition"
+                  className="relative cursor-pointer overflow-hidden border   border-green-600 text-green-600 px-4 py-3 rounded-2xl text-sm font-medium group "
                 >
-                  Schedule Consultation
+                  <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
+
+                  <span className="relative z-10 w-40 flex items-center gap-2 justify-center group-hover:text-white transition">
+                    Schedule Consultation
+                  </span>
                 </Link>
               </div>
             </div>
 
             {/* Right Side */}
-            <div className="bg-green-50 p-8 md:p-12 h-full">
+            <div className=" p-8 md:p-12 h-full">
               <div className="grid grid-cols-2 gap-5">
                 {customizationStats1.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-white border border-green-200 rounded-3xl p-6"
+                    className=" border border-green-200 rounded-3xl p-6"
                   >
                     <h3 className="text-4xl font-bold text-green-600">
                       {item.number}
@@ -228,7 +232,7 @@ const CustomizationStats = () => {
                 ))}
               </div>
 
-              <div className="mt-6 bg-white border border-green-200 rounded-3xl p-6">
+              <div className="mt-6  border border-green-200 rounded-3xl p-6">
                 <h3 className="text-xl font-bold text-[#0F2A44] mb-3">
                   What We Customize
                 </h3>

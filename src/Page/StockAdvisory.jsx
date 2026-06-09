@@ -262,7 +262,7 @@ const StockAdvisory = () => {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mt-10">
+              {/* <div className="grid grid-cols-3 gap-4 mt-10">
                 {[
                   {
                     number: "500+",
@@ -285,7 +285,7 @@ const StockAdvisory = () => {
                     <p className="text-gray-600 text-sm">{item.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Right Side Form */}

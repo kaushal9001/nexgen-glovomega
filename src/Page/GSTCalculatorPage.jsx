@@ -437,9 +437,13 @@ const GSTCalculatorPage = () => {
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={resetCalculator}
-                className="border border-green-600 text-green-600 px-8 py-3 rounded-xl hover:bg-green-50 transition"
+                className="relative cursor-pointer overflow-hidden border  border-green-600 text-green-600 px-8 py-3 rounded-2xl text-sm font-medium group "
               >
-                Reset Calculator
+                <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
+
+                <span className="relative z-10 w-30 flex items-center gap-2 justify-center group-hover:text-white transition">
+                  Reset Calculator
+                </span>
               </button>
             </div>
           </div>
@@ -457,7 +461,6 @@ const GSTCalculatorPage = () => {
               Explore the most common GST slabs and their applicable categories.
             </p>
           </div>
-          <div className="w-20 h-[3px]  bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7] mx-auto mt-3 rounded"></div>
 
           <div className="overflow-hidden border border-green-200 rounded-3xl shadow-lg">
             {/* Header */}

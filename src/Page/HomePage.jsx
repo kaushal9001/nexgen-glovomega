@@ -425,12 +425,13 @@ const HomePage = () => {
             {/* Left Content */}
             <div>
               <h2 className="text-4xl font-semibold text-[#0F2A44]">
-                Ready to get started?
+                Get a Free Consultation
               </h2>
 
               <p className="text-gray-600 text-xl mt-2 text-sm">
-                Create an account to start your company registration or migrate
-                your existing business. No-credit card required to explore.
+                Share your requirements and receive professional guidance for
+                company registration, taxation, compliance, and business growth
+                services.
               </p>
             </div>
 

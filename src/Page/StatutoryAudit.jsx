@@ -134,7 +134,7 @@ const StatutoryAudit = () => {
 
               {/* Stats */}
 
-              <div className="flex flex-wrap gap-10 mt-10">
+              {/* <div className="flex flex-wrap gap-10 mt-10">
                 {statutoryAuditStats.map((item, index) => (
                   <div key={index}>
                     <h3 className="text-3xl font-bold text-green-600">
@@ -144,7 +144,7 @@ const StatutoryAudit = () => {
                     <p className="text-sm text-gray-600 mt-1">{item.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Right Form */}

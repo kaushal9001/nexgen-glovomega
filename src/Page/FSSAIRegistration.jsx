@@ -218,7 +218,7 @@ const FSSAIRegistration = () => {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-5 mt-10">
+              {/* <div className="grid grid-cols-3 gap-5 mt-10">
                 {fssaiStats.map((item, index) => (
                   <div key={index}>
                     <h3 className="text-3xl font-bold text-green-600">
@@ -228,7 +228,7 @@ const FSSAIRegistration = () => {
                     <p className="text-gray-600 text-sm">{item.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Right Form */}

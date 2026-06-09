@@ -119,7 +119,7 @@ const StockAudit = () => {
 
               {/* Stats */}
 
-              <div className="flex flex-wrap gap-10 mt-10">
+              {/* <div className="flex flex-wrap gap-10 mt-10">
                 {stockAuditStats.map((item, index) => (
                   <div key={index}>
                     <h3 className="text-3xl font-bold text-green-600">
@@ -129,7 +129,7 @@ const StockAudit = () => {
                     <p className="text-sm text-gray-600 mt-1">{item.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Right Form */}

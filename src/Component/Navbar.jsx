@@ -23,8 +23,8 @@ const Navbar = () => {
     "Services",
     "Tools",
     "Investment",
-    "UAE Services",
     "ERP Implementation & Customization",
+    "UAE Services",
   ];
 
   // 🔥 Services Data (Mega Menu)
@@ -91,7 +91,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-7 text-gray-700 text-sm font-medium">
+        <ul className="hidden lg:flex items-center gap-10  text-gray-700 text-sm  font-medium">
           <Link
             className="hover:text-green-600 cursor-pointer transition"
             to={"/about-us"}

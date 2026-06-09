@@ -71,14 +71,17 @@ const TermsConditions = () => {
       content: [
         {
           bold: "Address:",
+          text: "501/B, B3 Saileela CHS. Building, MP Mill Compound, Tardeo, Mumbai -400034, INDIA",
           // text: "is a registered corporate services and compliance provider. By availing our services or accessing our website, you agree to the following terms and conditions.",
         },
         {
           bold: "Phone:",
+          text: "+91 7021182227",
           // text: "is a registered corporate services and compliance provider. By availing our services or accessing our website, you agree to the following terms and conditions.",
         },
         {
           bold: "Email:",
+          text: "info@nexgentaxsolution.com",
           // text: "is a registered corporate services and compliance provider. By availing our services or accessing our website, you agree to the following terms and conditions.",
         },
       ],

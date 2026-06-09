@@ -108,7 +108,7 @@ const ProfessionTax = () => {
               </div>
 
               {/* Stats */}
-
+              {/* 
               <div className="flex gap-8 mt-10">
                 {professionTaxStats.map((item, index) => (
                   <div key={index}>
@@ -119,7 +119,7 @@ const ProfessionTax = () => {
                     <p className="text-sm text-gray-600 mt-1">{item.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Form */}

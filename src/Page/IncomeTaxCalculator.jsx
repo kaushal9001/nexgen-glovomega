@@ -384,26 +384,25 @@ const IncomeTaxCalculator = () => {
             <div className="flex gap-4 mt-8 border-t border-green-600 pt-6">
               <button
                 onClick={calculateTax}
-                className="
-  bg-green-600
-  hover:bg-green-700
-  text-white
-  px-8
-  py-3
-  rounded-xl
-  font-medium
-  transition
-  "
+                className="relative cursor-pointer overflow-hidden border  border-green-600 text-green-600 px-8 py-3 rounded-2xl text-sm font-medium group "
               >
-                Calculate
+                <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
+
+                <span className="relative z-10 w-30 flex items-center gap-2 justify-center group-hover:text-white transition">
+                  Calculate
+                </span>
               </button>
 
               <button
                 type="button"
                 onClick={resetCalculator}
-                className="px-4 py-3 rounded-xl border border-red-500 text-red-600 hover:bg-red-50 transition"
+                className=" relative  cursor-pointer overflow-hidden  rounded-2xl border border-red-500 text-red-600 px-4 py-3   text-sm   font-medium group hover:bg-red-50 transition"
               >
-                Reset Calculator
+                <span className="absolute inset-0 bg-red-500 w-0 group-hover:w-full transition-all duration-500"></span>
+
+                <span className="relative z-10 w-30 flex items-center gap-2 justify-center group-hover:text-white transition">
+                  Reset Calculator
+                </span>
               </button>
             </div>
           </div>

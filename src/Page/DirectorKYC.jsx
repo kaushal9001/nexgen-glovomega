@@ -179,7 +179,7 @@ const DirectorKYC = () => {
 
               {/* Stats */}
 
-              <div className="grid grid-cols-3 gap-4 mt-10">
+              {/* <div className="grid grid-cols-3 gap-4 mt-10">
                 {directorKycStats.map((item, index) => (
                   <div key={index}>
                     <h3 className="text-3xl font-bold text-green-600">
@@ -189,7 +189,7 @@ const DirectorKYC = () => {
                     <p className="text-sm text-gray-600 mt-1">{item.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Form Side */}

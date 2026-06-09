@@ -1,4 +1,4 @@
-import { FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle, FaInstagram, FaInstagramSquare } from "react-icons/fa";
 import { useState } from "react";
 import {
   FaPhoneAlt,
@@ -8,6 +8,7 @@ import {
   FaTwitter,
   FaLinkedinIn,
 } from "react-icons/fa";
+import Form from "../Component/Form";
 
 const ContactusPage = () => {
   const [success, setSuccess] = useState(false);
@@ -109,13 +110,20 @@ const ContactusPage = () => {
     {
       icon: <FaMapMarkerAlt />,
       title: "Locate Us At",
-      value: "6th Floor, KRM Centre, Chennai, India",
+      value:
+        "501/B, B3 Saileela CHS. Building, MP Mill Compound, Tardeo, Mumbai -400034, INDIA",
     },
   ];
 
   const socialIcons = [
-    { icon: <FaFacebookF />, link: "#" },
-    { icon: <FaTwitter />, link: "#" },
+    {
+      icon: <FaFacebookF />,
+      link: "https://www.facebook.com/Nexgentaxsolutions",
+    },
+    {
+      icon: <FaInstagram />,
+      link: "https://www.instagram.com/nexgentaxsolutions/",
+    },
     { icon: <FaLinkedinIn />, link: "#" },
   ];
 
@@ -138,7 +146,7 @@ const ContactusPage = () => {
             {contactDetails.map((item, index) => (
               <div
                 key={index}
-                className="border  border-gray-200 rounded-xl p-5 flex items-center gap-4 shadow-sm hover:shadow-md transition hover:translate-x-1 duration-500 "
+                className="border  border-gray-200 rounded-xl p-5 flex  gap-4 shadow-sm hover:shadow-md transition hover:translate-x-1 duration-500 "
               >
                 <div className="text-green-600 text-xl">{item.icon}</div>
 
@@ -166,7 +174,10 @@ const ContactusPage = () => {
         </div>
 
         {/* Right Side Form */}
-        <div
+        <div>
+          <Form />
+        </div>
+        {/* <div
           key={shakeKey}
           className={
             Object.keys(errors).length > 0
@@ -266,7 +277,7 @@ const ContactusPage = () => {
               <p className="text-red-500 text-sm -mt-4">{errors.interest}</p>
             )}
 
-            {/* Submit Button */}
+          
             <button className="relative cursor-pointer overflow-hidden border border-green-600 text-green-600 px-6 py-2 rounded-2xl text-sm font-medium group">
               <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
@@ -280,7 +291,7 @@ const ContactusPage = () => {
               ✅ Form submitted successfully!
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </section>
   );

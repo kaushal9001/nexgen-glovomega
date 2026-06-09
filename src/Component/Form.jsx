@@ -9,8 +9,7 @@ const Form = () => {
     name: "",
     email: "",
     phone: "",
-    location: "",
-    interest: "",
+    serviceDescription: "",
   });
 
   const [success, setSuccess] = useState(false);
@@ -37,6 +36,8 @@ const Form = () => {
       else if (!/^[6-9]\d{9}$/.test(value)) message = "Invalid phone";
     }
 
+    if (!formData.serviceDescription)
+      newErrors.serviceDescription = "Description is required";
     setErrors((prev) => ({ ...prev, [field]: message }));
   };
 
@@ -57,9 +58,8 @@ const Form = () => {
     else if (!/^[6-9]\d{9}$/.test(formData.phone))
       newErrors.phone = "Invalid phone";
 
-    if (!formData.location) newErrors.location = "Location is required";
-
-    if (!formData.interest) newErrors.interest = "Interest is required";
+    if (!formData.serviceDescription)
+      newErrors.serviceDescription = "serviceDescription is required";
 
     setErrors(newErrors);
 
@@ -164,27 +164,26 @@ const Form = () => {
             <p className="text-red-500 text-sm -mt-4">{errors.phone}</p>
           )}
 
-          <input
-            key={`location-${shakeKey}`}
-            type="text"
-            placeholder="Select interested Location"
-            value={formData.location}
-            onChange={(e) => handleChange("location", e.target.value)}
-            className={`w-full border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 focus:outline-none ${isSubmitted && errors.location ? " shake" : ""}`}
+          <textarea
+            key={`serviceDescription-${shakeKey}`}
+            placeholder="Describe the service you are looking for"
+            value={formData.serviceDescription}
+            onChange={(e) => handleChange("serviceDescription", e.target.value)}
+            rows={4}
+            className={`w-full border rounded-xl px-4 py-3 outline-none resize-none focus:border-green-600 focus:ring-2 focus:ring-green-200
+  ${
+    formData.serviceDescription
+      ? errors.serviceDescription
+        ? "border-red-500"
+        : "border-green-500"
+      : "border-gray-300"
+  } ${isSubmitted && errors.serviceDescription ? "shake" : ""}`}
           />
-          {isSubmitted && errors.location && (
-            <p className="text-red-500 text-sm -mt-4">{errors.location}</p>
-          )}
-          <input
-            key={`interest-${shakeKey}`}
-            type="text"
-            placeholder="Select interest type"
-            value={formData.interest}
-            onChange={(e) => handleChange("interest", e.target.value)}
-            className={`w-full border border-gray-300 focus:border-green-600 focus:ring-2 focus:ring-green-200 rounded-xl px-4 py-3 focus:outline-none ${isSubmitted && errors.interest ? " shake" : ""}`}
-          />
-          {isSubmitted && errors.interest && (
-            <p className="text-red-500 text-sm -mt-4">{errors.interest}</p>
+
+          {isSubmitted && errors.serviceDescription && (
+            <p className="text-red-500 text-sm -mt-4">
+              {errors.serviceDescription}
+            </p>
           )}
 
           {/* Submit Button */}

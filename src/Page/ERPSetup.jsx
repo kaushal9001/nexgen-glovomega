@@ -180,9 +180,13 @@ const ERPSetup = () => {
               <div className="flex flex-wrap gap-4 mt-8">
                 <Link
                   to={"/contact-us"}
-                  className="bg-green-600 hover:bg-green-700 text-white px-7 py-3 rounded-2xl font-medium transition"
+                  className="relative cursor-pointer overflow-hidden border   border-green-600 text-green-600 px-4 py-3 rounded-2xl text-sm font-medium group "
                 >
-                  Schedule Consultation
+                  <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
+
+                  <span className="relative z-10 w-40 flex items-center gap-2 justify-center group-hover:text-white transition">
+                    Schedule Consultation
+                  </span>
                 </Link>
               </div>
             </div>

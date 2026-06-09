@@ -166,7 +166,7 @@ const ROCFiling = () => {
 
               {/* Stats */}
 
-              <div className="grid grid-cols-3 gap-5 mt-10">
+              {/* <div className="grid grid-cols-3 gap-5 mt-10">
                 {rocStats.map((item, index) => (
                   <div key={index}>
                     <h3 className="text-3xl font-bold text-green-600">
@@ -176,7 +176,7 @@ const ROCFiling = () => {
                     <p className="text-gray-600 text-sm mt-1">{item.label}</p>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Right Form */}

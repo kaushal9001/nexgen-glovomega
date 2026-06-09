@@ -262,23 +262,31 @@ const AboutPage = () => {
             </h2>
 
             <p className="text-gray-600 leading-relaxed">
-              Nexgentaxsolution was founded and is led by Mr. Sawid, a seasoned
-              professional with deep expertise in accounting, taxation, and
-              business advisory. With a strong educational background and
-              extensive experience working with growing businesses, he is
-              committed to making entrepreneurship simple and accessible for
-              all.
+              Nexgentaxsolution was founded and is led by Mr. Sawid Dange and
+              Mr. Mahesh Karnati, two experienced professionals with strong
+              expertise in accounting, taxation, compliance, and business
+              advisory services. With their combined knowledge, industry
+              experience, and commitment to excellence, they are dedicated to
+              making entrepreneurship simpler, more accessible, and
+              growth-oriented for businesses across India.
               <br />
               <br />
-              Before starting Nexgentaxsolution, Sawid worked closely with SMEs
-              and startups, helping them navigate regulatory requirements and
-              access financial solutions. His firsthand experience with business
-              challenges inspired him to create a platform that guides
-              entrepreneurs through registration, compliance, and taxation with
-              clarity and confidence. <br /> Under his leadership,
-              Nexgentaxsolution has grown into a trusted partner for thousands
-              of businesses across India, combining expert guidance, practical
-              solutions, and a client-first approach.
+              Before establishing Nexgentaxsolution, both founders worked
+              closely with startups, SMEs, and growing enterprises, helping them
+              navigate complex regulatory requirements, financial planning, and
+              business compliance challenges. Their firsthand understanding of
+              the difficulties faced by entrepreneurs inspired them to build a
+              platform that provides reliable guidance for business
+              registration, taxation, compliance management, and strategic
+              growth.
+              <br />
+              <br />
+              Under their leadership, Nexgentaxsolution has evolved into a
+              trusted partner for businesses nationwide, delivering expert
+              support, practical solutions, and a client-focused approach. Their
+              shared vision continues to empower entrepreneurs with the
+              confidence, clarity, and professional assistance needed to build
+              and grow successful businesses.
             </p>
           </div>
 
