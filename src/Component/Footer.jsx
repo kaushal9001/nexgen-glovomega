@@ -89,6 +89,10 @@ const Footer = () => {
           name: "SEBI",
           path: "https://www.sebi.gov.in",
         },
+        {
+          name: "Trademark Search",
+          path: "https://tmrsearch.ipindia.gov.in/tmrpublicsearch/",
+        },
       ],
     },
   ];
@@ -156,6 +160,7 @@ const Footer = () => {
                   className="transition hover:-translate-y-0.5 duration-500  w-35"
                 >
                   <Link
+                    target="_blank"
                     to={link.path}
                     className="hover:text-green-400 transition  "
                   >

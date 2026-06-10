@@ -85,15 +85,16 @@ const Navbar = () => {
 
   return (
     <nav className={`w-full ${isHome ? "bg-[#f0f8fb]" : ""} pt-5`}>
-      <div className="md:px-10 px-5 py-3 flex items-center justify-between">
+      <div className="md:px-10 px-3  flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
-          <img src={logo} alt="logo" className="h-15 w-35" />
+          <img src={logo} alt="logo" className="w-45 " />
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-10  text-gray-700 text-sm  font-medium">
+        <ul className="hidden lg:flex items-center gap-4  text-gray-700 text-[17px]  font-medium">
           <Link
+            target="_blank"
             className="hover:text-green-600 cursor-pointer transition"
             to={"/about-us"}
           >
@@ -165,6 +166,7 @@ const Navbar = () => {
                               }`}
                             >
                               <Link
+                                target="_blank"
                                 onClick={() => setActiveMenu(null)}
                                 to={`${cat}`}
                               >
@@ -192,6 +194,7 @@ const Navbar = () => {
 
                           {submenuItems[activeCategory].map((item, i) => (
                             <Link
+                              target="_blank"
                               onClick={() => setActiveMenu(null)}
                               to={
                                 item.title === "Class -3"
@@ -247,6 +250,7 @@ const Navbar = () => {
                       <div className="w-[220px] space-y-2 border-l-2 pl-2  ">
                         {dropdownData[item].map((sub, i) => (
                           <Link
+                            target="_blank"
                             to={`${sub.title}`}
                             key={i}
                             className="text-gray-700 flex text-sm hover:text-green-600 cursor-pointer"
@@ -306,6 +310,7 @@ const Navbar = () => {
             {/* Menu */}
             <ul className="flex flex-col gap-2">
               <Link
+                target="_blank"
                 onClick={() => setOpen(false)}
                 className="border-b py-2"
                 to={"/about-us"}
@@ -354,6 +359,7 @@ const Navbar = () => {
                           )}
                           {submenuItems[cat]?.length > 0 || (
                             <Link
+                              target="_blank"
                               to={`${cat}`}
                               onClick={() => {
                                 setMobileSub(mobileSub === cat ? null : cat);
@@ -376,6 +382,7 @@ const Navbar = () => {
                               <div key={j}>
                                 {/* Main Item */}
                                 <Link
+                                  target="_blank"
                                   to={
                                     sub.title === "Class -3"
                                       ? "/serviceDSC"
@@ -424,6 +431,7 @@ const Navbar = () => {
                     <div className="pl-4 mt-2 space-y-1">
                       {dropdownData[item].map((sub, i) => (
                         <Link
+                          target="_blank"
                           to={`${sub.title}`}
                           onClick={() => {
                             setOpen(false);
