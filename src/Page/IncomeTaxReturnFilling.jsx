@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Form from "../Component/Form";
 const itrFeatures = [
   "CA Assisted Filing",
@@ -220,7 +221,18 @@ const IncomeTaxReturnFilling = () => {
                   </div>
                 ))}
               </div>
+              <div className="flex gap-4 mt-8 border-t border-green-600 pt-6">
+                <Link
+                  to={"/Due Date Calendar"}
+                  className="relative cursor-pointer overflow-hidden border   border-green-600 text-green-600 px-4 py-3 rounded-2xl text-sm font-medium group "
+                >
+                  <span className="absolute inset-0 bg-green-600 w-0 group-hover:w-full transition-all duration-500"></span>
 
+                  <span className="relative z-10 w-40 flex items-center gap-2 justify-center group-hover:text-white transition">
+                    Due Date Calendar
+                  </span>
+                </Link>
+              </div>
               {/* Stats */}
               {/* <div className="grid grid-cols-3 gap-5 mt-10">
                 {itrStats.map((item, index) => (
