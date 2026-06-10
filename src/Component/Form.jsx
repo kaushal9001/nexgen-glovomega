@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendEmail } from "../utils/sendEmail";
 
 const Form = () => {
   const [shakeKey, setShakeKey] = useState(0);
@@ -35,13 +36,9 @@ const Form = () => {
       if (!value) message = "Phone is required";
       else if (!/^[6-9]\d{9}$/.test(value)) message = "Invalid phone";
     }
-
-    if (!formData.serviceDescription)
-      newErrors.serviceDescription = "Description is required";
-    setErrors((prev) => ({ ...prev, [field]: message }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setIsSubmitted(true);
@@ -70,21 +67,43 @@ const Form = () => {
     }
 
     // ✅ SUCCESS
-    console.log("Form Submitted:", formData);
+    const result = await sendEmail({
+      message: `
+Form Type: Enquiry Form
 
-    setSuccess(true);
+Name: ${formData.name}
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      location: "",
-      interest: "",
+Email: ${formData.email}
+
+Phone: ${formData.phone}
+
+Service Description:
+${formData.serviceDescription}
+
+Submitted On:
+${new Date().toLocaleString()}
+  `,
     });
 
-    setIsSubmitted(false);
+    if (result.success) {
+      console.log(formData);
+      console.log("Email Sent Successfully");
 
-    setTimeout(() => setSuccess(false), 3000);
+      setSuccess(true);
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        serviceDescription: "",
+      });
+
+      setIsSubmitted(false);
+
+      setTimeout(() => setSuccess(false), 3000);
+    } else {
+      alert("Email sending failed");
+    }
   };
   return (
     <>

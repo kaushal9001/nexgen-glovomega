@@ -42,7 +42,10 @@ const Footer = () => {
       title: "Platforms",
       links: [
         { name: "Business Search", path: "/Business Setup" },
-        { name: "Trademark Search", path: "/trademark-search" },
+        {
+          name: "Trademark Search",
+          path: "https://tmrsearch.ipindia.gov.in/tmrpublicsearch/",
+        },
         { name: "Filings.AE for UAE", path: "/Company Setup UAE" },
       ],
     },

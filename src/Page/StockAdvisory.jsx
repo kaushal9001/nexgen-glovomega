@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendEmail } from "../utils/sendEmail";
 
 const advisoryFeatures = [
   "Research Based Recommendations",
@@ -177,7 +178,7 @@ const StockAdvisory = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newErrors = {};
@@ -209,21 +210,46 @@ const StockAdvisory = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log(formData);
+      const selectedGoal = investmentGoals.find(
+        (item) => item.value === formData.goal,
+      );
+      const result = await sendEmail({
+        message: `
+Form Type: Stock Advisory
 
-      setSubmitted(true);
-      console.log(formData);
+Name: ${formData.name}
 
-      setFormData({
-        name: "",
-        mobile: "",
-        email: "",
-        amount: "",
-        goal: "",
+Mobile: ${formData.mobile}
+
+Email: ${formData.email}
+
+Investment Amount: ₹${formData.amount}
+
+Investment Goal: ${selectedGoal?.label}
+
+Submitted On:
+${new Date().toLocaleString()}
+`,
       });
-      setSuccess(true);
+
+      if (result.success) {
+        setSubmitted(true);
+
+        setFormData({
+          name: "",
+          mobile: "",
+          email: "",
+          amount: "",
+          goal: "",
+        });
+
+        setSuccess(true);
+
+        setTimeout(() => setSuccess(false), 3000);
+      } else {
+        alert("Email sending failed");
+      }
     }
-    setTimeout(() => setSuccess(false), 3000);
   };
   return (
     <>

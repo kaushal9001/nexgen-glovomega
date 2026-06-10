@@ -51,6 +51,8 @@ import CustomizationStats from "./Page/CustomizationStats";
 import ConfidentialityPolicy from "./Page/ConfidentialityPolicy";
 import DisclaimerPolicy from "./Page/DisclaimerPolicy";
 import Review from "./Page/Review";
+import RefundPolicy from "./Page/RefundPolicy";
+import DueDateCalendar from "./Page/DueDateCalendar";
 
 const App = () => {
   const lenis = useLenis((lenis) => {
@@ -68,6 +70,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/refund" element={<RefundPolicy />} />
             <Route
               path="/confidentiality/"
               element={<ConfidentialityPolicy />}
@@ -131,6 +134,7 @@ const App = () => {
             <Route path="/ERP Setup/" element={<ERPSetup />} />
             <Route path="/Customization/" element={<CustomizationStats />} />
             <Route path="/review/" element={<Review />} />
+            <Route path="/Due Date Calendar/" element={<DueDateCalendar />} />
             <Route
               path="/Income Tax Calculator/"
               element={<IncomeTaxCalculator />}

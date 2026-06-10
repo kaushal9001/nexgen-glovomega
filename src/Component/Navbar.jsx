@@ -4,6 +4,7 @@ import { FaBars } from "react-icons/fa";
 import { HiOutlineX } from "react-icons/hi";
 import { IoIosArrowForward } from "react-icons/io";
 import logo from "../assets/photos/logoo.png";
+// import logo from "../assets/photos/logo.jpg";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {

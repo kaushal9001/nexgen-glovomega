@@ -6,6 +6,7 @@ import { HiGlobeAlt } from "react-icons/hi";
 import { MdDescription } from "react-icons/md";
 import { FaAddressCard } from "react-icons/fa";
 import emailjs from "emailjs-com";
+import { sendEmail } from "../utils/sendEmail";
 
 import {
   FaPhoneAlt,
@@ -26,26 +27,33 @@ const ServicePageDSC = () => {
   const [userType, setUserType] = useState("Individual");
   const [showPopup, setShowPopup] = useState(false);
 
-  const validateField = (field, value) => {
-    let message = "";
+  const validateForm = () => {
+    let newErrors = {};
 
-    if (field === "name") {
-      if (!value.trim()) message = "Name is required";
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
     }
 
-    if (field === "email") {
-      if (!value) message = "Email is required";
-      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
-        message = "Invalid email format";
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Invalid email";
     }
 
-    if (field === "phone") {
-      if (!value) message = "Phone is required";
-      else if (!/^[6-9]\d{9}$/.test(value))
-        message = "Enter valid 10-digit number";
+    if (!formData.phone) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^[6-9]\d{9}$/.test(formData.phone)) {
+      newErrors.phone = "Invalid phone";
     }
 
-    setErrorsF((prev) => ({ ...prev, [field]: message }));
+    setErrorsF(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      setShakeKey((prev) => prev + 1);
+      return false;
+    }
+
+    return true;
   };
 
   const { title } = useParams();
@@ -146,35 +154,32 @@ const ServicePageDSC = () => {
   //   // fetch("/api/send-email", { ... })
   // };
 
-  const validateForm = () => {
-    let newErrors = {};
+  const validateField = (field, value) => {
+    let message = "";
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+    if (field === "name") {
+      if (!value.trim()) message = "Name is required";
     }
 
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Invalid email";
+    if (field === "email") {
+      if (!value) message = "Email is required";
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
+        message = "Invalid email format";
     }
 
-    if (!formData.phone) {
-      newErrors.phone = "Phone is required";
-    } else if (!/^[6-9]\d{9}$/.test(formData.phone)) {
-      newErrors.phone = "Invalid phone";
+    if (field === "phone") {
+      if (!value) message = "Phone is required";
+      else if (!/^[6-9]\d{9}$/.test(value))
+        message = "Enter valid 10-digit number";
     }
 
-    setErrorsF(newErrors);
-
-    // return Object.keys(newErrors).length === 0;
-    if (Object.keys(newErrors).length > 0) {
-      setShakeKey((prev) => prev + 1); // 🔥 har click pe shake
-      return;
-    }
+    setErrorsF((prev) => ({
+      ...prev,
+      [field]: message,
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setIsSubmitted(true);
@@ -191,25 +196,35 @@ const ServicePageDSC = () => {
     setError("");
 
     const emailData = {
-      title: "DSC Service Form Submission",
-
-      message: `📌 New Enquiry Received:
+      message: `
+📌 New DSC Service Enquiry
 
 👤 Name: ${formData.name}
+
 📧 Email: ${formData.email}
+
 📱 Phone: ${formData.phone}
 
-🌍 Type: ${formData.type}
+🌍 Applicant Type: ${formData.type}
+
 🏢 User Type: ${formData.userType}
 
-📄 Certificate: ${formData.certificateType}
+📄 Certificate Type: ${formData.certificateType}
+
 ⏳ Validity: ${formData.validity}
 
-➕ Extras: ${formData.extras.join(", ") || "None"}
+➕ Selected Services:
+${formData.extras.join(", ") || "None"}
 
-🕒 Time: ${new Date().toLocaleString()}
-    `,
+🕒 Submitted On:
+${new Date().toLocaleString()}
+`,
     };
+    const result = await sendEmail(emailData);
+    if (!result.success) {
+      alert("Email sending failed");
+      return;
+    }
     setSuccess(true);
 
     // emailjs
@@ -230,8 +245,8 @@ const ServicePageDSC = () => {
     //   .catch((error) => {
     //     alert("❌ Error sending email: " + error.text);
     //   });
+    setFormData(initialFormData);
     setIsSubmitted(false);
-
     setTimeout(() => setSuccess(false), 3000);
   };
   // 🔥 Data Arrays
