@@ -249,7 +249,7 @@ const LabourWelfareFund = () => {
               {lwfProcess.map((item) => (
                 <div
                   key={item.step}
-                  className="border border-gray-200 rounded-[28px] p-6 text-center"
+                  className="border border-green-200 rounded-[28px] p-6 text-center"
                 >
                   <div className="text-5xl font-bold text-green-100 mb-4">
                     {item.step}
@@ -303,24 +303,44 @@ const LabourWelfareFund = () => {
 
           {/* Why Choose Us */}
 
-          <div className="border border-gray-200 rounded-[32px] p-8">
+          <div className="border border-green-200 rounded-[32px] p-8">
             <h3 className="text-3xl font-bold text-center text-[#0F2A44] mb-10">
               Why Choose Our LWF Service?
             </h3>
 
             <div className="grid md:grid-cols-3 gap-5 mb-10">
-              {lwfStats2.map((item, index) => (
-                <div
-                  key={index}
-                  className="text-center border border-gray-100 rounded-3xl p-6"
-                >
-                  <h4 className="text-4xl font-bold text-green-600">
-                    {item.number}
-                  </h4>
+              <div className="border border-green-400 rounded-3xl p-6">
+                <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                  State-Wise Compliance
+                </h4>
 
-                  <p className="text-gray-600 mt-2">{item.label}</p>
-                </div>
-              ))}
+                <p className="text-gray-600 leading-7">
+                  We help businesses comply with Labour Welfare Fund regulations
+                  as per the specific requirements of each state.
+                </p>
+              </div>
+
+              <div className="border border-green-400 rounded-3xl p-6">
+                <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                  Accurate Filing Support
+                </h4>
+
+                <p className="text-gray-600 leading-7">
+                  Our experts ensure timely and accurate LWF calculations,
+                  deductions, and return filing to avoid penalties.
+                </p>
+              </div>
+
+              <div className="border border-green-400 rounded-3xl p-6">
+                <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                  End-to-End Assistance
+                </h4>
+
+                <p className="text-gray-600 leading-7">
+                  From employee contribution calculations to submission and
+                  compliance tracking, we manage the complete process.
+                </p>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-5">

@@ -513,29 +513,52 @@ const GSTRegistrationReturns = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-5">
-              {gstStats2.map((item, index) => (
-                <div
-                  key={index}
-                  className="border border-green-200 rounded-3xl p-8 text-center hover:border-green-500 hover:shadow-lg transition-all duration-300"
-                >
-                  <h3 className="text-5xl font-bold text-green-600 mb-3">
-                    {item.number}
-                  </h3>
+            <div className="grid gap-5">
+              <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                  Input Tax Credit Benefit
+                </h3>
 
-                  <p className="text-gray-600 font-medium">{item.label}</p>
-                </div>
-              ))}
+                <p className="text-gray-600 leading-7">
+                  GST registration allows businesses to claim Input Tax Credit
+                  (ITC) on purchases, reducing overall tax liability and
+                  improving profitability.
+                </p>
+              </div>
 
-              {/* Extra Highlight Card */}
-              <div className="col-span-2 bg-gradient-to-r from-green-600 to-green-500 rounded-3xl p-8 text-white">
+              <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                  Expand Across India
+                </h3>
+
+                <p className="text-gray-600 leading-7">
+                  Registered businesses can legally sell goods and services
+                  across different states without facing unnecessary compliance
+                  hurdles.
+                </p>
+              </div>
+
+              <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 transition-all duration-300">
+                <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                  Build Business Credibility
+                </h3>
+
+                <p className="text-gray-600 leading-7">
+                  GST registration enhances trust among customers, suppliers,
+                  and financial institutions, helping your business grow
+                  professionally.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-green-600 to-green-500 rounded-3xl p-8 text-white">
                 <h3 className="text-3xl font-bold mb-3">
                   Grow Your Business with GST
                 </h3>
 
-                <p className="text-green-50">
+                <p className="text-green-50 leading-7">
                   Claim Input Tax Credit, improve business credibility, expand
-                  across India and stay fully compliant with GST laws.
+                  across India, and stay fully compliant with GST regulations
+                  while focusing on business growth.
                 </p>
               </div>
             </div>

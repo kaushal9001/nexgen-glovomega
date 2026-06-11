@@ -127,15 +127,15 @@ const HomePage = () => {
       <section className="pt-10 md:pt-15 pb-12 bg-[#f0f8fb]">
         <div className="px-5 md:px-10 text-center">
           {/* Heading */}
-          <h1 className="text-[25px]  md:text-5xl font-semibold text-[#0F2A44] leading-tight">
+          <h1 className="text-[15px]  md:text-4xl font-semibold text-[#0F2A44] ">
             India’s Trusted Platform for Businesses and Tax Compliance
           </h1>
 
           {/* underline */}
-          <div className="w-20 h-[3px] bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7]  mx-auto my-6 rounded"></div>
+          <div className="w-20 h-[3px] bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7]  mx-auto my-2 rounded"></div>
 
           {/* paragraph */}
-          <p className="text-gray-600 max-w-3xl mx-auto text-base leading-relaxed">
+          <p className="text-gray-600 max-w-4xl mx-auto text-base ">
             Businesses across India rely on our expertise to manage their MCA,
             GST, and Income Tax compliance smoothly. With experienced
             professionals and a streamlined process, we provide end-to-end
@@ -169,7 +169,7 @@ const HomePage = () => {
       <section className="bg-[#f0f8fb] pb-10">
         {/* Heading */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-[#0F2A44]">Our Clients</h2>
+          <h2 className="text-3xl font-bold text-[#0F2A44]">Our Clients</h2>
 
           <div className="w-20 h-[3px]  bg-linear-to-r from-[#f2fff7] via-green-600 to-[#f2fff7] mx-auto mt-3 rounded"></div>
         </div>

@@ -212,7 +212,7 @@ const BusinessSetup = () => {
               {setupProcess.map((item, index) => (
                 <div
                   key={index}
-                  className="relative border border-gray-200 rounded-[28px] p-6"
+                  className="relative border border-green-200 rounded-[28px] p-6"
                 >
                   <div className="text-6xl font-bold text-green-100 mb-4">
                     0{index + 1}
@@ -228,7 +228,7 @@ const BusinessSetup = () => {
 
           {/* Documents */}
 
-          <div className="border border-gray-200 rounded-[32px] p-8 mb-16">
+          <div className="border border-green-200 rounded-[32px] p-8 mb-16">
             <h3 className="text-3xl font-bold text-[#0F2A44] mb-8 text-center">
               Documents Required
             </h3>
@@ -237,7 +237,7 @@ const BusinessSetup = () => {
               {setupDocuments.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-2xl p-5 text-center"
+                  className=" border border-green-300 rounded-2xl p-5 text-center"
                 >
                   {item}
                 </div>

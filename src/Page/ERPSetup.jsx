@@ -193,19 +193,39 @@ const ERPSetup = () => {
 
             {/* Right Side */}
             <div className="     p-8 md:p-12 h-full">
-              <div className="grid grid-cols-2  gap-5">
-                {erpStats.map((item, index) => (
-                  <div
-                    key={index}
-                    className=" border border-green-200 rounded-3xl p-6"
-                  >
-                    <h3 className="text-4xl font-bold text-green-600">
-                      {item.number}
-                    </h3>
+              <div className="grid grid-cols-1 gap-5">
+                <div className="border border-green-200 rounded-3xl p-6">
+                  <h3 className="text-xl font-bold text-[#0F2A44] mb-3">
+                    Centralized Business Management
+                  </h3>
 
-                    <p className="text-gray-600 mt-2">{item.label}</p>
-                  </div>
-                ))}
+                  <p className="text-gray-600 leading-7">
+                    Manage accounting, inventory, sales, HR, payroll, and
+                    operations from a single integrated platform.
+                  </p>
+                </div>
+
+                <div className="border border-green-200 rounded-3xl p-6">
+                  <h3 className="text-xl font-bold text-[#0F2A44] mb-3">
+                    Real-Time Business Insights
+                  </h3>
+
+                  <p className="text-gray-600 leading-7">
+                    Access live reports and dashboards to make faster and more
+                    informed business decisions.
+                  </p>
+                </div>
+
+                <div className="border border-green-200 rounded-3xl p-6">
+                  <h3 className="text-xl font-bold text-[#0F2A44] mb-3">
+                    Improved Productivity
+                  </h3>
+
+                  <p className="text-gray-600 leading-7">
+                    Automate repetitive tasks, reduce manual errors, and improve
+                    overall operational efficiency.
+                  </p>
+                </div>
               </div>
 
               <div className="mt-6   border border-green-200 rounded-3xl p-6">
@@ -431,22 +451,49 @@ const ERPSetup = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {erpBenefits.map((item, index) => (
-            <div
-              key={index}
-              className="border border-green-200 rounded-3xl p-6 text-center hover:border-green-500 hover:shadow-lg transition-all duration-300"
-            >
-              <h3 className="text-5xl font-bold text-green-600 mb-4">
-                {item.number}
-              </h3>
+          <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300">
+            <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+              Increased Efficiency
+            </h4>
 
-              <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
-                {item.title}
-              </h4>
+            <p className="text-gray-600 leading-7">
+              Automate routine tasks and streamline workflows to improve
+              productivity across departments.
+            </p>
+          </div>
 
-              <p className="text-gray-600 leading-7">{item.desc}</p>
-            </div>
-          ))}
+          <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300">
+            <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+              Better Decision Making
+            </h4>
+
+            <p className="text-gray-600 leading-7">
+              Access real-time reports and business insights to make faster and
+              more informed decisions.
+            </p>
+          </div>
+
+          <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300">
+            <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+              Improved Collaboration
+            </h4>
+
+            <p className="text-gray-600 leading-7">
+              Connect teams and departments through a centralized system that
+              improves communication and coordination.
+            </p>
+          </div>
+
+          <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300">
+            <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+              Scalable Growth
+            </h4>
+
+            <p className="text-gray-600 leading-7">
+              Support business expansion with flexible ERP solutions that grow
+              along with your organization.
+            </p>
+          </div>
         </div>
 
         <div className="mt-10 border border-green-200 bg-green-50 rounded-3xl p-8">

@@ -179,22 +179,37 @@ const GSTAudit = () => {
             </div>
 
             <div className="space-y-5">
-              <div className="border border-gray-200 rounded-[28px] p-6">
-                <h4 className="text-4xl font-bold text-green-600">2500+</h4>
+              <div className="border border-green-200 rounded-[28px] p-6">
+                <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                  Identify GST Errors
+                </h4>
 
-                <p className="text-gray-600 mt-2">GST Audits Completed</p>
+                <p className="text-gray-600 leading-7">
+                  Detect mismatches in GST returns, invoices, and Input Tax
+                  Credit claims before they become compliance issues.
+                </p>
               </div>
 
-              <div className="border border-gray-200 rounded-[28px] p-6">
-                <h4 className="text-4xl font-bold text-green-600">99%</h4>
+              <div className="border border-green-200 rounded-[28px] p-6">
+                <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                  Reduce Tax Risks
+                </h4>
 
-                <p className="text-gray-600 mt-2">Compliance Success</p>
+                <p className="text-gray-600 leading-7">
+                  Regular GST audits help minimize penalties, notices, and
+                  unexpected tax liabilities by ensuring proper compliance.
+                </p>
               </div>
 
-              <div className="border border-gray-200 rounded-[28px] p-6">
-                <h4 className="text-4xl font-bold text-green-600">10+</h4>
+              <div className="border border-green-200 rounded-[28px] p-6">
+                <h4 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                  Improve Financial Transparency
+                </h4>
 
-                <p className="text-gray-600 mt-2">Years Experience</p>
+                <p className="text-gray-600 leading-7">
+                  Maintain accurate records and strengthen business credibility
+                  with proper GST reconciliation and reporting.
+                </p>
               </div>
             </div>
           </div>

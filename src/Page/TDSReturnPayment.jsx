@@ -265,19 +265,39 @@ const TDSReturnPayment = () => {
                 compliance.
               </p>
 
-              <div className="grid grid-cols-3 gap-4 mt-8">
-                {tdsFacts.map((item, index) => (
-                  <div
-                    key={index}
-                    className="bg-green-50 border border-green-200 rounded-2xl p-4 text-center"
-                  >
-                    <h4 className="text-2xl font-bold text-green-600">
-                      {item.value}
-                    </h4>
+              <div className="grid gap-4 mt-8">
+                <div className="bg-green-50 border border-green-200 rounded-2xl p-5">
+                  <h4 className="font-semibold text-[#0F2A44] mb-2">
+                    Timely Tax Collection
+                  </h4>
 
-                    <p className="text-sm text-gray-600 mt-2">{item.label}</p>
-                  </div>
-                ))}
+                  <p className="text-gray-600 text-sm leading-6">
+                    TDS helps the government collect tax at the source of
+                    income, ensuring regular and timely tax payments.
+                  </p>
+                </div>
+
+                <div className="bg-green-50 border border-green-200 rounded-2xl p-5">
+                  <h4 className="font-semibold text-[#0F2A44] mb-2">
+                    Reduces Tax Evasion
+                  </h4>
+
+                  <p className="text-gray-600 text-sm leading-6">
+                    Since tax is deducted before payment is made, it minimizes
+                    the chances of tax avoidance and improves compliance.
+                  </p>
+                </div>
+
+                <div className="bg-green-50 border border-green-200 rounded-2xl p-5">
+                  <h4 className="font-semibold text-[#0F2A44] mb-2">
+                    Credit Available to Recipient
+                  </h4>
+
+                  <p className="text-gray-600 text-sm leading-6">
+                    The deducted amount is reflected in Form 26AS and can be
+                    claimed as tax credit while filing Income Tax Returns.
+                  </p>
+                </div>
               </div>
             </div>
 

@@ -7,7 +7,7 @@ const ComingSoon = () => {
   return (
     <section className="md:px-10 px-5 mt-10  flex items-center justify-center">
       <div className="">
-        <div className="rounded-[40px] bg-gray-400/10 backdrop-blur-sm border border-gray-200 p-8 md:p-16">
+        <div className="rounded-[40px]   border border-green-200 p-8 ">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left */}
             <div>
@@ -44,7 +44,7 @@ const ComingSoon = () => {
 
             {/* Right */}
             <div className="grid gap-5">
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+              <div className=" border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
                 <div className="flex items-center gap-4">
                   <div className="text-green-600 text-2xl">
                     <FaTools />
@@ -61,7 +61,7 @@ const ComingSoon = () => {
                 </div>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+              <div className=" border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
                 <div className="flex items-center gap-4">
                   <div className="text-green-600 text-2xl">
                     <FaClock />
@@ -78,7 +78,7 @@ const ComingSoon = () => {
                 </div>
               </div>
 
-              <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+              <div className=" border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
                 <div className="flex items-center gap-4">
                   <div className="text-green-600 text-2xl">
                     <FaRocket />

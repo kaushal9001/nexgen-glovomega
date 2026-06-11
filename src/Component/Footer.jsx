@@ -42,10 +42,7 @@ const Footer = () => {
       title: "Platforms",
       links: [
         { name: "Business Search", path: "/Business Setup" },
-        {
-          name: "Trademark Search",
-          path: "https://tmrsearch.ipindia.gov.in/tmrpublicsearch/",
-        },
+
         { name: "Filings.AE for UAE", path: "/Company Setup UAE" },
       ],
     },
@@ -55,7 +52,10 @@ const Footer = () => {
       links: [
         { name: "Confidentiality Policy", path: "/confidentiality" },
         { name: "Disclaimer Policy", path: "/disclaimer" },
-        { name: "Review", path: "/review" },
+        {
+          name: "Review",
+          path: "https://www.google.com/maps/place/Nexgentax+Solutions/@18.9701746,72.8133783,17z/data=!4m8!3m7!1s0x3be7cf201a532689:0x3eca5c645e4042ca!8m2!3d18.9701746!4d72.8133783!9m1!1b1!16s%2Fg%2F11g0mjh93w?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D",
+        },
       ],
     },
     {
@@ -106,7 +106,7 @@ const Footer = () => {
             <img
               src={logo}
               alt="logo"
-              className="h-15 w-35   rounded-md cursor-pointer"
+              className="h-23 w-50  rounded-md cursor-pointer"
             />
           </Link>
 

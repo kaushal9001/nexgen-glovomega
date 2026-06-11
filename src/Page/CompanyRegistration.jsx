@@ -396,18 +396,49 @@ const CompanyRegistration = () => {
           {/* Stats */}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
-            {registrationStats2.map((item, index) => (
-              <div
-                key={index}
-                className=" border border-green-200 rounded-3xl p-8 text-center hover:border-green-500 transition-all duration-300"
-              >
-                <h3 className="text-5xl font-bold text-green-600">
-                  {item.number}
-                </h3>
+            <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 transition-all duration-300">
+              <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                Expert Guidance
+              </h3>
 
-                <p className="text-gray-600 mt-3">{item.label}</p>
-              </div>
-            ))}
+              <p className="text-gray-600 leading-7">
+                Get professional support throughout the registration process,
+                from planning to final approval.
+              </p>
+            </div>
+
+            <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 transition-all duration-300">
+              <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                Accurate Documentation
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                We ensure all forms and documents are prepared correctly to
+                avoid delays and rejections.
+              </p>
+            </div>
+
+            <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 transition-all duration-300">
+              <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                End-to-End Assistance
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                From name approval to registration certificates, we manage the
+                complete process for you.
+              </p>
+            </div>
+
+            <div className="border border-green-200 rounded-3xl p-6 hover:border-green-500 transition-all duration-300">
+              <h3 className="text-xl font-semibold text-[#0F2A44] mb-3">
+                Dedicated Support
+              </h3>
+
+              <p className="text-gray-600 leading-7">
+                Our team remains available to answer your questions and provide
+                updates at every stage.
+              </p>
+            </div>
           </div>
 
           {/* Trust Section */}

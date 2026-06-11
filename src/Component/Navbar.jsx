@@ -88,11 +88,11 @@ const Navbar = () => {
       <div className="md:px-10 px-3  flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
-          <img src={logo} alt="logo" className="w-45 " />
+          <img src={logo} alt="logo" className="w-50 " />
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-4  text-gray-700 text-[17px]  font-medium">
+        <ul className="hidden lg:flex items-center gap-4  text-gray-700 text-[18px]  font-medium">
           <Link
             target="_blank"
             className="hover:text-green-600 cursor-pointer transition"

@@ -217,19 +217,39 @@ const CustomizationStats = () => {
 
             {/* Right Side */}
             <div className=" p-8 md:p-12 h-full">
-              <div className="grid grid-cols-2 gap-5">
-                {customizationStats1.map((item, index) => (
-                  <div
-                    key={index}
-                    className=" border border-green-200 rounded-3xl p-6"
-                  >
-                    <h3 className="text-4xl font-bold text-green-600">
-                      {item.number}
-                    </h3>
+              <div className="grid gap-5">
+                <div className="border border-green-200 rounded-3xl p-6">
+                  <h3 className="text-xl font-bold text-[#0F2A44] mb-3">
+                    Tailored to Your Business
+                  </h3>
 
-                    <p className="text-gray-600 mt-2">{item.label}</p>
-                  </div>
-                ))}
+                  <p className="text-gray-600 leading-7">
+                    Every customization is designed around your unique
+                    workflows, processes, and business requirements.
+                  </p>
+                </div>
+
+                <div className="border border-green-200 rounded-3xl p-6">
+                  <h3 className="text-xl font-bold text-[#0F2A44] mb-3">
+                    Improved User Experience
+                  </h3>
+
+                  <p className="text-gray-600 leading-7">
+                    Simplify operations with intuitive interfaces and features
+                    built specifically for your team.
+                  </p>
+                </div>
+
+                <div className="border border-green-200 rounded-3xl p-6">
+                  <h3 className="text-xl font-bold text-[#0F2A44] mb-3">
+                    Better Productivity
+                  </h3>
+
+                  <p className="text-gray-600 leading-7">
+                    Automate repetitive tasks and optimize workflows to save
+                    time and improve efficiency.
+                  </p>
+                </div>
               </div>
 
               <div className="mt-6  border border-green-200 rounded-3xl p-6">
